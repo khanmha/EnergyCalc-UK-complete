@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EV Charging Cost Calculator UK | EnergyCalc UK</title>
+  <meta name="description" content="Estimate home EV charging cost from battery size, percentage added, charging efficiency and your electricity unit rate.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="EV Charging Cost Calculator UK | EnergyCalc UK">
+  <meta property="og:description" content="Estimate home EV charging cost from battery size, percentage added, charging efficiency and your electricity unit rate.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0d7f74">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../index.html">EnergyCalc UK</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#calculators">Calculators</a>
+      <a href="../../guides/index.html">Guides</a>
+      <a href="../../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="container">
+    <div class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../../index.html#calculators">Calculators</a> / EV Charging Cost Calculator</div>
+    <h1 class="page-title">EV Charging Cost Calculator UK</h1>
+    <p class="lead">Estimate home EV charging cost from battery size, percentage added, charging efficiency and your electricity unit rate.</p>
+    
+<div class="update-box">
+  <strong>Updated: August 2026</strong>
+  <p>The calculator defaults to <strong>26.11p per kWh</strong>, the Ofgem average electricity unit rate for a standard variable tariff paid by Direct Debit from 1 July to 30 September 2026. Your own tariff may be different.</p>
+  <a href="https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges" target="_blank" rel="noopener"><strong>View Ofgem electricity rates →</strong></a>
+</div>
+
+    <section class="card calc-shell" data-calculator="ev">
+      <h2>Calculate EV Charging Cost</h2>
+      <form class="form-grid">
+        <div>
+          <label for="rate">Electricity price</label>
+          <div class="input-wrap"><input id="rate" name="rate" type="number" min="0" step="0.01" value="26.11" required><span class="unit">p/kWh</span></div>
+        </div>
+        <div>
+          <label for="battery">Usable battery capacity</label>
+          <div class="input-wrap"><input id="battery" name="battery" type="number" min="0" step="0.1" value="60" required><span class="unit">kWh</span></div>
+        </div>
+        <div>
+          <label for="added">Battery percentage added</label>
+          <div class="input-wrap"><input id="added" name="added" type="number" min="0" max="100" step="1" value="50" required><span class="unit">%</span></div>
+        </div>
+        <div>
+          <label for="efficiency">Charging efficiency</label>
+          <div class="input-wrap"><input id="efficiency" name="efficiency" type="number" min="1" max="100" step="1" value="90" required><span class="unit">%</span></div>
+        </div>
+        <div>
+          <label for="usesWeek">Charging sessions per week</label>
+          <input id="usesWeek" name="usesWeek" type="number" min="0" step="1" value="2" required>
+        </div>
+        <button class="button calc-button" type="submit">Calculate Charging Cost</button>
+      </form>
+      
+<div class="results" aria-live="polite">
+  <section class="card">
+    <h2>Your Estimated Running Costs</h2>
+    <div class="result-grid">
+      <div class="result"><span>Per Charge</span><strong data-out="perUse">£0.00</strong></div>
+      <div class="result"><span>Per Week</span><strong data-out="perWeek">£0.00</strong></div>
+      <div class="result"><span>Per Month</span><strong data-out="perMonth">£0.00</strong></div>
+      <div class="result"><span>Per Year</span><strong data-out="perYear">£0.00</strong></div>
+    </div>
+    <div class="summary">
+      <h3>Usage Summary</h3>
+      <p>Estimated annual use: <strong data-out="annualUses">—</strong></p>
+      <p>Estimated electricity use per year: <strong data-out="annualKwh">—</strong></p>
+    </div>
+  </section>
+</div>
+      <div class="summary"><p>Estimated grid energy per charge: <strong data-out="energyPerCharge">—</strong></p></div>
+    </section>
+
+    <section class="card content-card">
+      <h2>How is EV charging cost calculated?</h2>
+      <p>The calculator works out the energy added to the battery, then adjusts for charging losses to estimate the electricity drawn from the grid.</p>
+      <div class="formula">Grid energy = (Battery capacity × Percentage added) ÷ Charging efficiency</div>
+      <div class="formula">Charging cost = Grid energy × Electricity price</div>
+    </section>
+
+    <section class="card content-card">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><h3>Why include charging efficiency?</h3><p>Some energy is lost between the wall and the battery. Efficiency lets the calculator estimate how much energy must be drawn from the grid.</p></div><div class="faq-item"><h3>Should I use my home tariff or public charging price?</h3><p>Enter the price you actually pay per kWh for the charging session you want to estimate.</p></div><div class="faq-item"><h3>Does this include standing charges or charger installation?</h3><p>No. It estimates electricity consumed for charging only.</p></div><div class="faq-item"><h3>Can I model a partial charge?</h3><p>Yes. Enter the percentage of the battery you expect to add, such as 40% or 60%.</p></div>
+    </section>
+
+    
+    <section class="card content-card">
+      <h2>Other Electricity Cost Calculators</h2>
+      <p>Compare other household appliances using the same electricity rate.</p>
+      <div class="related-links"><a href="../washing-machine-running-cost-calculator/index.html">Washing Machine Cost Calculator →</a>
+<a href="../tumble-dryer-running-cost-calculator/index.html">Tumble Dryer Cost Calculator →</a>
+<a href="../dishwasher-running-cost-calculator/index.html">Dishwasher Cost Calculator →</a>
+<a href="../kettle-running-cost-calculator/index.html">Kettle Cost Calculator →</a>
+<a href="../oven-running-cost-calculator/index.html">Oven Cost Calculator →</a>
+<a href="../microwave-running-cost-calculator/index.html">Microwave Cost Calculator →</a></div>
+    </section>
+  </div>
+</main>
+<script src="../../js/calculator.js"></script>
+
+<footer class="site-footer">
+  <div class="container">
+    <strong>EnergyCalc UK</strong>
+    <div class="footer-links">
+      <a href="../../about.html">About</a>
+      <a href="../../privacy.html">Privacy</a>
+      <a href="../../disclaimer.html">Disclaimer</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+    <p>© 2026 EnergyCalc UK</p>
+    <p class="small" style="color:#cbd6e8">Estimates only. Actual electricity consumption and costs may vary.</p>
+  </div>
+</footer></body></html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Appliance Running Cost Calculator UK | EnergyCalc UK</title>
+  <meta name="description" content="Use this general calculator for TVs, dehumidifiers, fans, computers and other electrical appliances.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Appliance Running Cost Calculator UK | EnergyCalc UK">
+  <meta property="og:description" content="Use this general calculator for TVs, dehumidifiers, fans, computers and other electrical appliances.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0d7f74">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../index.html">EnergyCalc UK</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#calculators">Calculators</a>
+      <a href="../../guides/index.html">Guides</a>
+      <a href="../../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="container">
+    <div class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../../index.html#calculators">Calculators</a> / Generic Appliance Cost Calculator</div>
+    <h1 class="page-title">Appliance Running Cost Calculator UK</h1>
+    <p class="lead">Use this general calculator for TVs, dehumidifiers, fans, computers and other electrical appliances.</p>
+    
+<div class="update-box">
+  <strong>Updated: August 2026</strong>
+  <p>The calculator defaults to <strong>26.11p per kWh</strong>, the Ofgem average electricity unit rate for a standard variable tariff paid by Direct Debit from 1 July to 30 September 2026. Your own tariff may be different.</p>
+  <a href="https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges" target="_blank" rel="noopener"><strong>View Ofgem electricity rates →</strong></a>
+</div>
+
+    <section class="card calc-shell" data-calculator="power-hours">
+      <h2>Calculate Running Cost</h2>
+      <form class="form-grid">
+        <div>
+          <label for="rate">Electricity price</label>
+          <div class="input-wrap"><input id="rate" name="rate" type="number" min="0" step="0.01" value="26.11" required><span class="unit">p/kWh</span></div>
+        </div>
+        <div>
+          <label for="watts">Average power draw</label>
+          <div class="input-wrap"><input id="watts" name="watts" type="number" min="0" step="1" value="1000" required><span class="unit">watts</span></div>
+        </div>
+        <div>
+          <label for="hoursDay">Hours used per active day</label>
+          <div class="input-wrap"><input id="hoursDay" name="hoursDay" type="number" min="0" step="0.1" value="2" required><span class="unit">hours</span></div>
+        </div>
+        <div>
+          <label for="daysWeek">Days used per week</label>
+          <input id="daysWeek" name="daysWeek" type="number" min="0" max="7" step="1" value="7" required>
+        </div>
+        <button class="button calc-button" type="submit">Calculate Running Cost</button>
+      </form>
+      
+<div class="results" aria-live="polite">
+  <section class="card">
+    <h2>Your Estimated Running Costs</h2>
+    <div class="result-grid">
+      <div class="result"><span>Per Active Day</span><strong data-out="perUse">£0.00</strong></div>
+      <div class="result"><span>Per Week</span><strong data-out="perWeek">£0.00</strong></div>
+      <div class="result"><span>Per Month</span><strong data-out="perMonth">£0.00</strong></div>
+      <div class="result"><span>Per Year</span><strong data-out="perYear">£0.00</strong></div>
+    </div>
+    <div class="summary">
+      <h3>Usage Summary</h3>
+      <p>Estimated annual use: <strong data-out="annualUses">—</strong></p>
+      <p>Estimated electricity use per year: <strong data-out="annualKwh">—</strong></p>
+    </div>
+  </section>
+</div>
+    </section>
+
+    <section class="card content-card">
+      <h2>How is the cost calculated?</h2>
+      <p>The calculator converts watts to kilowatts and multiplies that by the hours used. This gives estimated electricity consumption in kWh.</p>
+      <div class="formula">Daily kWh = (Watts ÷ 1,000) × Hours used</div>
+      <div class="formula">Daily cost = Daily kWh × Electricity price</div>
+      <p>If the device's power draw changes during use, a measured average wattage will usually give a better estimate than its maximum rating.</p>
+    </section>
+
+    <section class="card content-card">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><h3>What wattage should I enter?</h3><p>Use the appliance's rated or measured average power. A plug-in energy monitor can give a more realistic figure for appliances whose power changes during use.</p></div><div class="faq-item"><h3>Can I use this for devices with thermostats?</h3><p>Yes, but rated wattage may overestimate cost if the device cycles on and off. Measured average power is better.</p></div><div class="faq-item"><h3>Does this include standing charges?</h3><p>No. Standing charges are fixed daily charges and are not caused by a single appliance, so the calculator focuses on energy used.</p></div>
+    </section>
+
+    
+    <section class="card content-card">
+      <h2>Other Electricity Cost Calculators</h2>
+      <p>Compare other household appliances using the same electricity rate.</p>
+      <div class="related-links"><a href="../washing-machine-running-cost-calculator/index.html">Washing Machine Cost Calculator →</a>
+<a href="../tumble-dryer-running-cost-calculator/index.html">Tumble Dryer Cost Calculator →</a>
+<a href="../dishwasher-running-cost-calculator/index.html">Dishwasher Cost Calculator →</a>
+<a href="../kettle-running-cost-calculator/index.html">Kettle Cost Calculator →</a>
+<a href="../oven-running-cost-calculator/index.html">Oven Cost Calculator →</a>
+<a href="../microwave-running-cost-calculator/index.html">Microwave Cost Calculator →</a></div>
+    </section>
+  </div>
+</main>
+<script src="../../js/calculator.js"></script>
+
+<footer class="site-footer">
+  <div class="container">
+    <strong>EnergyCalc UK</strong>
+    <div class="footer-links">
+      <a href="../../about.html">About</a>
+      <a href="../../privacy.html">Privacy</a>
+      <a href="../../disclaimer.html">Disclaimer</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+    <p>© 2026 EnergyCalc UK</p>
+    <p class="small" style="color:#cbd6e8">Estimates only. Actual electricity consumption and costs may vary.</p>
+  </div>
+</footer></body></html>

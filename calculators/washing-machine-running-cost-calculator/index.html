@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Washing Machine Running Cost Calculator UK | EnergyCalc UK</title>
+  <meta name="description" content="Calculate how much your washing machine costs to run per wash, week, month and year using your own electricity rate.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Washing Machine Running Cost Calculator UK | EnergyCalc UK">
+  <meta property="og:description" content="Calculate how much your washing machine costs to run per wash, week, month and year using your own electricity rate.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0d7f74">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../index.html">EnergyCalc UK</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#calculators">Calculators</a>
+      <a href="../../guides/index.html">Guides</a>
+      <a href="../../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="container">
+    <div class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../../index.html#calculators">Calculators</a> / Washing Machine Cost Calculator</div>
+    <h1 class="page-title">Washing Machine Running Cost Calculator UK</h1>
+    <p class="lead">Calculate how much your washing machine costs to run per wash, week, month and year using your own electricity rate.</p>
+    
+<div class="update-box">
+  <strong>Updated: August 2026</strong>
+  <p>The calculator defaults to <strong>26.11p per kWh</strong>, the Ofgem average electricity unit rate for a standard variable tariff paid by Direct Debit from 1 July to 30 September 2026. Your own tariff may be different.</p>
+  <a href="https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges" target="_blank" rel="noopener"><strong>View Ofgem electricity rates →</strong></a>
+</div>
+
+    <section class="card calc-shell" data-calculator="cycle">
+      <h2>Calculate Your Washing Machine Running Cost</h2>
+      <form class="form-grid">
+        <div>
+          <label for="rate">Electricity price</label>
+          <div class="input-wrap"><input id="rate" name="rate" type="number" min="0" step="0.01" value="26.11" required><span class="unit">p/kWh</span></div>
+          <div class="help">Replace the default with the unit rate shown on your electricity bill if different.</div>
+        </div>
+        <div>
+          <label for="kwh">Energy used per wash</label>
+          <div class="input-wrap"><input id="kwh" name="kwh" type="number" min="0" step="0.01" value="0.75" required><span class="unit">kWh</span></div>
+          <div class="help">Use the appliance energy label, manual or manufacturer's specification page where possible.</div>
+        </div>
+        <div>
+          <label for="usesWeek">Washes per week</label>
+          <input id="usesWeek" name="usesWeek" type="number" min="0" step="1" value="5" required>
+        </div>
+        <button class="button calc-button" type="submit">Calculate Running Cost</button>
+      </form>
+      
+<div class="results" aria-live="polite">
+  <section class="card">
+    <h2>Your Estimated Running Costs</h2>
+    <div class="result-grid">
+      <div class="result"><span>Per Wash</span><strong data-out="perUse">£0.00</strong></div>
+      <div class="result"><span>Per Week</span><strong data-out="perWeek">£0.00</strong></div>
+      <div class="result"><span>Per Month</span><strong data-out="perMonth">£0.00</strong></div>
+      <div class="result"><span>Per Year</span><strong data-out="perYear">£0.00</strong></div>
+    </div>
+    <div class="summary">
+      <h3>Usage Summary</h3>
+      <p>Estimated annual use: <strong data-out="annualUses">—</strong></p>
+      <p>Estimated electricity use per year: <strong data-out="annualKwh">—</strong></p>
+    </div>
+  </section>
+</div>
+      <div class="table-wrap">
+        <h3>Washes Frequency Comparison</h3>
+        <table>
+          <thead><tr><th>Uses per week</th><th>Monthly cost</th><th>Annual cost</th></tr></thead>
+          <tbody data-comparison></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card content-card">
+      <h2>How is the wash running cost calculated?</h2>
+      <p>The calculation multiplies electricity used for one wash by the price you pay for each kilowatt-hour of electricity.</p>
+      <div class="formula">Cost per wash = Energy used per cycle × Electricity price</div>
+      <p>With the default example, 0.75 kWh × £0.2611 = £0.1958, or about 20p for one wash.</p>
+    </section>
+
+    <section class="card content-card">
+      <h2>Where can I find the energy usage?</h2>
+      <p>Check the appliance energy label, manufacturer website, product manual or specification page. Washing-machine labels may show kWh per 100 cycles; divide that figure by 100 for an estimate per wash.</p>
+    </section>
+
+    <section class="card content-card">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><h3>How much does a washing machine cost to run?</h3><p>It depends on the machine's energy consumption, your electricity tariff and how often you use it. Enter those values above for a personalised estimate.</p></div><div class="faq-item"><h3>Does washing at a lower temperature save electricity?</h3><p>Lower-temperature programmes can often use less electricity because less energy is required to heat the water, although actual consumption varies by appliance and programme.</p></div><div class="faq-item"><h3>Is this calculator exact?</h3><p>No. It is an estimate. Programme, load, temperature, machine efficiency and your tariff can all change actual consumption.</p></div><div class="faq-item"><h3>What does kWh mean?</h3><p>kWh means kilowatt-hour, a standard unit used to measure electrical energy consumption.</p></div>
+    </section>
+
+    
+    <section class="card content-card">
+      <h2>Other Electricity Cost Calculators</h2>
+      <p>Compare other household appliances using the same electricity rate.</p>
+      <div class="related-links"><a href="../tumble-dryer-running-cost-calculator/index.html">Tumble Dryer Cost Calculator →</a>
+<a href="../dishwasher-running-cost-calculator/index.html">Dishwasher Cost Calculator →</a>
+<a href="../kettle-running-cost-calculator/index.html">Kettle Cost Calculator →</a>
+<a href="../oven-running-cost-calculator/index.html">Oven Cost Calculator →</a>
+<a href="../microwave-running-cost-calculator/index.html">Microwave Cost Calculator →</a>
+<a href="../air-fryer-electricity-cost-calculator/index.html">Air Fryer Cost Calculator →</a></div>
+    </section>
+  </div>
+</main>
+<script src="../../js/calculator.js"></script>
+
+<footer class="site-footer">
+  <div class="container">
+    <strong>EnergyCalc UK</strong>
+    <div class="footer-links">
+      <a href="../../about.html">About</a>
+      <a href="../../privacy.html">Privacy</a>
+      <a href="../../disclaimer.html">Disclaimer</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+    <p>© 2026 EnergyCalc UK</p>
+    <p class="small" style="color:#cbd6e8">Estimates only. Actual electricity consumption and costs may vary.</p>
+  </div>
+</footer></body></html>

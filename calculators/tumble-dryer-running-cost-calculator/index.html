@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tumble Dryer Running Cost Calculator UK | EnergyCalc UK</title>
+  <meta name="description" content="Estimate the electricity cost of using a tumble dryer per load, week, month and year.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Tumble Dryer Running Cost Calculator UK | EnergyCalc UK">
+  <meta property="og:description" content="Estimate the electricity cost of using a tumble dryer per load, week, month and year.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0d7f74">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../index.html">EnergyCalc UK</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#calculators">Calculators</a>
+      <a href="../../guides/index.html">Guides</a>
+      <a href="../../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="container">
+    <div class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../../index.html#calculators">Calculators</a> / Tumble Dryer Cost Calculator</div>
+    <h1 class="page-title">Tumble Dryer Running Cost Calculator UK</h1>
+    <p class="lead">Estimate the electricity cost of using a tumble dryer per load, week, month and year.</p>
+    
+<div class="update-box">
+  <strong>Updated: August 2026</strong>
+  <p>The calculator defaults to <strong>26.11p per kWh</strong>, the Ofgem average electricity unit rate for a standard variable tariff paid by Direct Debit from 1 July to 30 September 2026. Your own tariff may be different.</p>
+  <a href="https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges" target="_blank" rel="noopener"><strong>View Ofgem electricity rates →</strong></a>
+</div>
+
+    <section class="card calc-shell" data-calculator="cycle">
+      <h2>Calculate Your Tumble Dryer Running Cost</h2>
+      <form class="form-grid">
+        <div>
+          <label for="rate">Electricity price</label>
+          <div class="input-wrap"><input id="rate" name="rate" type="number" min="0" step="0.01" value="26.11" required><span class="unit">p/kWh</span></div>
+          <div class="help">Replace the default with the unit rate shown on your electricity bill if different.</div>
+        </div>
+        <div>
+          <label for="kwh">Energy used per drying cycle</label>
+          <div class="input-wrap"><input id="kwh" name="kwh" type="number" min="0" step="0.01" value="2.0" required><span class="unit">kWh</span></div>
+          <div class="help">Use the appliance energy label, manual or manufacturer's specification page where possible.</div>
+        </div>
+        <div>
+          <label for="usesWeek">Loads per week</label>
+          <input id="usesWeek" name="usesWeek" type="number" min="0" step="1" value="3" required>
+        </div>
+        <button class="button calc-button" type="submit">Calculate Running Cost</button>
+      </form>
+      
+<div class="results" aria-live="polite">
+  <section class="card">
+    <h2>Your Estimated Running Costs</h2>
+    <div class="result-grid">
+      <div class="result"><span>Per Cycle</span><strong data-out="perUse">£0.00</strong></div>
+      <div class="result"><span>Per Week</span><strong data-out="perWeek">£0.00</strong></div>
+      <div class="result"><span>Per Month</span><strong data-out="perMonth">£0.00</strong></div>
+      <div class="result"><span>Per Year</span><strong data-out="perYear">£0.00</strong></div>
+    </div>
+    <div class="summary">
+      <h3>Usage Summary</h3>
+      <p>Estimated annual use: <strong data-out="annualUses">—</strong></p>
+      <p>Estimated electricity use per year: <strong data-out="annualKwh">—</strong></p>
+    </div>
+  </section>
+</div>
+      <div class="table-wrap">
+        <h3>Loads Frequency Comparison</h3>
+        <table>
+          <thead><tr><th>Uses per week</th><th>Monthly cost</th><th>Annual cost</th></tr></thead>
+          <tbody data-comparison></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card content-card">
+      <h2>How is the drying cycle running cost calculated?</h2>
+      <p>The calculation multiplies electricity used for one drying cycle by the price you pay for each kilowatt-hour of electricity.</p>
+      <div class="formula">Cost per drying cycle = Energy used per cycle × Electricity price</div>
+      <p>With the default example, 2.0 kWh × £0.2611 = £0.5222, or about 52p for one drying cycle.</p>
+    </section>
+
+    <section class="card content-card">
+      <h2>Where can I find the energy usage?</h2>
+      <p>Look for kWh per cycle or kWh per 100 cycles on the energy label or technical specification. Heat-pump, condenser and vented dryers can have very different consumption.</p>
+    </section>
+
+    <section class="card content-card">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><h3>Why do tumble dryer running costs vary so much?</h3><p>Dryer type, programme length, load size and efficiency can significantly change electricity use.</p></div><div class="faq-item"><h3>Are heat-pump dryers usually cheaper to run?</h3><p>They are generally designed to use less electricity than traditional condenser or vented dryers, but check the specific model's energy label for a fair comparison.</p></div><div class="faq-item"><h3>Can I use the figure per 100 cycles?</h3><p>Yes. Divide the kWh per 100 cycles figure by 100 and enter the result as energy used per drying cycle.</p></div><div class="faq-item"><h3>Does a fuller load always save money?</h3><p>A sensibly full load can reduce the number of cycles needed, but overloading can reduce drying performance. Follow the appliance instructions.</p></div>
+    </section>
+
+    
+    <section class="card content-card">
+      <h2>Other Electricity Cost Calculators</h2>
+      <p>Compare other household appliances using the same electricity rate.</p>
+      <div class="related-links"><a href="../washing-machine-running-cost-calculator/index.html">Washing Machine Cost Calculator →</a>
+<a href="../dishwasher-running-cost-calculator/index.html">Dishwasher Cost Calculator →</a>
+<a href="../kettle-running-cost-calculator/index.html">Kettle Cost Calculator →</a>
+<a href="../oven-running-cost-calculator/index.html">Oven Cost Calculator →</a>
+<a href="../microwave-running-cost-calculator/index.html">Microwave Cost Calculator →</a>
+<a href="../air-fryer-electricity-cost-calculator/index.html">Air Fryer Cost Calculator →</a></div>
+    </section>
+  </div>
+</main>
+<script src="../../js/calculator.js"></script>
+
+<footer class="site-footer">
+  <div class="container">
+    <strong>EnergyCalc UK</strong>
+    <div class="footer-links">
+      <a href="../../about.html">About</a>
+      <a href="../../privacy.html">Privacy</a>
+      <a href="../../disclaimer.html">Disclaimer</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+    <p>© 2026 EnergyCalc UK</p>
+    <p class="small" style="color:#cbd6e8">Estimates only. Actual electricity consumption and costs may vary.</p>
+  </div>
+</footer></body></html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kettle Running Cost Calculator UK | EnergyCalc UK</title>
+  <meta name="description" content="Calculate how much it costs to boil your electric kettle using its wattage, boil time and your electricity rate.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Kettle Running Cost Calculator UK | EnergyCalc UK">
+  <meta property="og:description" content="Calculate how much it costs to boil your electric kettle using its wattage, boil time and your electricity rate.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0d7f74">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../../index.html">EnergyCalc UK</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="../../index.html">Home</a>
+      <a href="../../index.html#calculators">Calculators</a>
+      <a href="../../guides/index.html">Guides</a>
+      <a href="../../about.html">About</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="container">
+    <div class="breadcrumb"><a href="../../index.html">Home</a> / <a href="../../index.html#calculators">Calculators</a> / Kettle Cost Calculator</div>
+    <h1 class="page-title">Kettle Running Cost Calculator UK</h1>
+    <p class="lead">Calculate how much it costs to boil your electric kettle using its wattage, boil time and your electricity rate.</p>
+    
+<div class="update-box">
+  <strong>Updated: August 2026</strong>
+  <p>The calculator defaults to <strong>26.11p per kWh</strong>, the Ofgem average electricity unit rate for a standard variable tariff paid by Direct Debit from 1 July to 30 September 2026. Your own tariff may be different.</p>
+  <a href="https://www.ofgem.gov.uk/information-consumers/energy-advice-households/energy-price-cap-unit-rates-and-standing-charges" target="_blank" rel="noopener"><strong>View Ofgem electricity rates →</strong></a>
+</div>
+
+    <section class="card calc-shell" data-calculator="power-day">
+      <h2>Calculate Your Kettle Running Cost</h2>
+      <form class="form-grid">
+        <div>
+          <label for="rate">Electricity price</label>
+          <div class="input-wrap"><input id="rate" name="rate" type="number" min="0" step="0.01" value="26.11" required><span class="unit">p/kWh</span></div>
+        </div>
+        <div>
+          <label for="watts">Appliance power</label>
+          <div class="input-wrap"><input id="watts" name="watts" type="number" min="0" step="1" value="3000" required><span class="unit">watts</span></div>
+          <div class="help">Use electrical input/rated wattage where available.</div>
+        </div>
+        <div>
+          <label for="minutes">Minutes per use</label>
+          <div class="input-wrap"><input id="minutes" name="minutes" type="number" min="0" step="1" value="3" required><span class="unit">minutes</span></div>
+        </div>
+        <div>
+          <label for="usesDay">Boils per day</label>
+          <input id="usesDay" name="usesDay" type="number" min="0" step="1" value="5" required>
+        </div>
+        <button class="button calc-button" type="submit">Calculate Running Cost</button>
+      </form>
+      
+<div class="results" aria-live="polite">
+  <section class="card">
+    <h2>Your Estimated Running Costs</h2>
+    <div class="result-grid">
+      <div class="result"><span>Per Use</span><strong data-out="perUse">£0.00</strong></div>
+      <div class="result"><span>Per Week</span><strong data-out="perWeek">£0.00</strong></div>
+      <div class="result"><span>Per Month</span><strong data-out="perMonth">£0.00</strong></div>
+      <div class="result"><span>Per Year</span><strong data-out="perYear">£0.00</strong></div>
+    </div>
+    <div class="summary">
+      <h3>Usage Summary</h3>
+      <p>Estimated annual use: <strong data-out="annualUses">—</strong></p>
+      <p>Estimated electricity use per year: <strong data-out="annualKwh">—</strong></p>
+    </div>
+  </section>
+</div>
+      <div class="summary">
+        <p>Estimated electricity per use: <strong data-out="kwhPerUse">—</strong></p>
+      </div>
+    </section>
+
+    <section class="card content-card">
+      <h2>How is the cost calculated?</h2>
+      <p>Rated power in watts is converted to kilowatts, then multiplied by the time used in hours. That gives an estimated kWh figure for one use.</p>
+      <div class="formula">kWh per use = (Watts ÷ 1,000) × (Minutes ÷ 60)</div>
+      <div class="formula">Cost per use = kWh per use × Electricity price</div>
+      <p>This is a simple estimate. Appliances with thermostats or variable power may draw less than their maximum rated wattage for part of the time.</p>
+    </section>
+
+    <section class="card content-card">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><h3>Does filling the kettle with more water cost more?</h3><p>Usually yes, because heating a larger volume of water requires more energy and often takes longer.</p></div><div class="faq-item"><h3>Where can I find kettle wattage?</h3><p>It is usually printed on the rating label under the kettle or base, and often appears in the product specification.</p></div><div class="faq-item"><h3>Why is this an estimate?</h3><p>Kettles switch off automatically and real heating time varies with water volume, starting temperature and efficiency.</p></div>
+    </section>
+
+    
+    <section class="card content-card">
+      <h2>Other Electricity Cost Calculators</h2>
+      <p>Compare other household appliances using the same electricity rate.</p>
+      <div class="related-links"><a href="../washing-machine-running-cost-calculator/index.html">Washing Machine Cost Calculator →</a>
+<a href="../tumble-dryer-running-cost-calculator/index.html">Tumble Dryer Cost Calculator →</a>
+<a href="../dishwasher-running-cost-calculator/index.html">Dishwasher Cost Calculator →</a>
+<a href="../oven-running-cost-calculator/index.html">Oven Cost Calculator →</a>
+<a href="../microwave-running-cost-calculator/index.html">Microwave Cost Calculator →</a>
+<a href="../air-fryer-electricity-cost-calculator/index.html">Air Fryer Cost Calculator →</a></div>
+    </section>
+  </div>
+</main>
+<script src="../../js/calculator.js"></script>
+
+<footer class="site-footer">
+  <div class="container">
+    <strong>EnergyCalc UK</strong>
+    <div class="footer-links">
+      <a href="../../about.html">About</a>
+      <a href="../../privacy.html">Privacy</a>
+      <a href="../../disclaimer.html">Disclaimer</a>
+      <a href="../../contact.html">Contact</a>
+    </div>
+    <p>© 2026 EnergyCalc UK</p>
+    <p class="small" style="color:#cbd6e8">Estimates only. Actual electricity consumption and costs may vary.</p>
+  </div>
+</footer></body></html>
