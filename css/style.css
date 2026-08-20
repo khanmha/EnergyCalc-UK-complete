@@ -230,3 +230,683 @@ th{background:#f7f9fc;font-size:.9rem}
   .result-grid{grid-template-columns:1fr}
   .card{padding:20px}
 }
+
+/* =========================================================
+   EXTRA VISUAL POLISH
+   ADD THIS AT THE VERY END OF style.css
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   SOFTER WEBSITE BACKGROUND
+--------------------------------------------------------- */
+
+body {
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(13, 127, 116, 0.045),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 30%,
+      rgba(34, 197, 94, 0.04),
+      transparent 28%
+    ),
+    var(--bg);
+}
+
+
+/* ---------------------------------------------------------
+   BETTER HEADER / GLASS EFFECT
+--------------------------------------------------------- */
+
+.site-header {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 3px 18px rgba(15, 35, 62, 0.035);
+}
+
+
+/* ---------------------------------------------------------
+   LOGO POLISH
+--------------------------------------------------------- */
+
+.brand {
+  position: relative;
+  transition:
+    transform .2s ease,
+    color .2s ease;
+}
+
+.brand:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: var(--brand-dark);
+}
+
+
+/* ---------------------------------------------------------
+   NAVIGATION HOVER LINE
+--------------------------------------------------------- */
+
+.nav-links a {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    var(--brand),
+    #22c55e
+  );
+
+  border-radius: 10px;
+
+  transform: translateX(-50%);
+
+  transition: width .25s ease;
+}
+
+.nav-links a:hover {
+  text-decoration: none;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   MORE ATTRACTIVE HERO
+--------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(13, 127, 116, 0.13),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 65%,
+      rgba(34, 197, 94, 0.10),
+      transparent 28%
+    ),
+    linear-gradient(
+      135deg,
+      #e9fbf5,
+      #f3fffb,
+      #edf8ff
+    );
+}
+
+
+/* decorative background circles */
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 260px;
+  height: 260px;
+
+  top: -130px;
+  left: -90px;
+
+  background:
+    rgba(13, 127, 116, 0.06);
+}
+
+.hero::after {
+  width: 320px;
+  height: 320px;
+
+  right: -150px;
+  bottom: -190px;
+
+  background:
+    rgba(34, 197, 94, 0.055);
+}
+
+
+/* make hero content stay above decoration */
+
+.hero h1,
+.hero p,
+.hero .button {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* hero heading depth */
+
+.hero h1 {
+  color: var(--navy);
+
+  text-shadow:
+    0 2px 1px rgba(255,255,255,.8);
+}
+
+
+/* ---------------------------------------------------------
+   BUTTON UPGRADE
+--------------------------------------------------------- */
+
+.button {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--brand),
+      #10a897
+    );
+
+  box-shadow:
+    0 8px 20px rgba(13, 127, 116, 0.20);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(13, 127, 116, 0.26);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--brand-dark),
+      var(--brand)
+    );
+}
+
+
+/* small shine animation */
+
+.button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 80px;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.25),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left .55s ease;
+}
+
+.button:hover::before {
+  left: 130%;
+}
+
+
+/* ---------------------------------------------------------
+   CALCULATOR CARDS
+--------------------------------------------------------- */
+
+.calc-card {
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+
+.calc-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--brand),
+      #22c55e
+    );
+
+  opacity: 0;
+
+  transition: opacity .25s ease;
+}
+
+
+.calc-card:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(13, 127, 116, 0.24);
+
+  box-shadow:
+    0 20px 40px
+    rgba(15, 35, 62, 0.10);
+}
+
+
+.calc-card:hover::before {
+  opacity: 1;
+}
+
+
+/* icon animation */
+
+.calc-card .icon {
+  display: inline-block;
+
+  transition:
+    transform .25s ease;
+}
+
+
+.calc-card:hover .icon {
+  transform:
+    translateY(-3px)
+    scale(1.08);
+}
+
+
+/* calculator link */
+
+.calc-card .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  transition:
+    gap .2s ease,
+    color .2s ease;
+}
+
+
+.calc-card:hover .link {
+  gap: 9px;
+}
+
+
+/* ---------------------------------------------------------
+   GENERAL CARDS
+--------------------------------------------------------- */
+
+.card {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    border-color .2s ease;
+}
+
+
+.content-card:hover {
+  border-color:
+    rgba(13, 127, 116, 0.18);
+
+  box-shadow:
+    0 16px 35px rgba(15,35,62,.075);
+}
+
+
+/* ---------------------------------------------------------
+   UPDATE / OFGEM BOX
+--------------------------------------------------------- */
+
+.update-box {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f0fdfa
+    );
+
+  box-shadow:
+    0 8px 22px rgba(15,35,62,.045);
+}
+
+
+/* ---------------------------------------------------------
+   INPUTS
+--------------------------------------------------------- */
+
+input,
+select {
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease,
+    transform .15s ease;
+}
+
+
+input:hover,
+select:hover {
+  border-color:
+    rgba(13, 127, 116, .45);
+}
+
+
+input:focus,
+select:focus {
+  outline: none;
+
+  border-color: var(--brand);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(13, 127, 116, .10);
+}
+
+
+/* ---------------------------------------------------------
+   RESULT BOXES
+--------------------------------------------------------- */
+
+.result {
+  position: relative;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(13, 127, 116, .08);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.result:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 22px
+    rgba(13,127,116,.10);
+}
+
+
+.result strong {
+  letter-spacing: -.4px;
+}
+
+
+/* small decorative shine */
+
+.result::after {
+  content: "";
+
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  right: -30px;
+  top: -30px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(13,127,116,.05);
+}
+
+
+/* ---------------------------------------------------------
+   TABLE POLISH
+--------------------------------------------------------- */
+
+tbody tr {
+  transition:
+    background .2s ease;
+}
+
+
+tbody tr:hover {
+  background:
+    rgba(233,250,247,.65);
+}
+
+
+th {
+  color: var(--navy);
+}
+
+
+/* ---------------------------------------------------------
+   RELATED CALCULATOR LINKS
+--------------------------------------------------------- */
+
+.related-links a {
+  position: relative;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.related-links a:hover {
+  transform: translateY(-2px);
+
+  text-decoration: none;
+
+  background: var(--brand-soft);
+
+  border-color:
+    rgba(13,127,116,.25);
+
+  box-shadow:
+    0 8px 18px
+    rgba(15,35,62,.055);
+}
+
+
+/* ---------------------------------------------------------
+   FAQ
+--------------------------------------------------------- */
+
+.faq-item {
+  transition:
+    padding-left .2s ease,
+    background .2s ease;
+}
+
+
+.faq-item:hover {
+  padding-left: 8px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(233,250,247,.45),
+      transparent
+    );
+}
+
+
+/* ---------------------------------------------------------
+  FORMULA
+--------------------------------------------------------- */
+
+.formula {
+  border-radius: 0 10px 10px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--brand-soft),
+      #f7fafc
+    );
+}
+
+
+/* ---------------------------------------------------------
+  FOOTER
+--------------------------------------------------------- */
+
+.site-footer {
+  background:
+    linear-gradient(
+      135deg,
+      #0d1930,
+      #132544
+    );
+
+  border-top:
+    4px solid var(--brand);
+}
+
+
+/* ---------------------------------------------------------
+  NICE TEXT SELECTION
+--------------------------------------------------------- */
+
+::selection {
+  background:
+    rgba(13, 127, 116, .20);
+
+  color: var(--navy);
+}
+
+
+/* ---------------------------------------------------------
+  SUBTLE PAGE LOAD ANIMATION
+--------------------------------------------------------- */
+
+@keyframes energyFadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+.hero h1,
+.hero p,
+.calc-card,
+.calc-shell {
+  animation:
+    energyFadeUp .45s ease both;
+}
+
+
+/* slightly stagger calculator cards */
+
+.calc-card:nth-child(2) {
+  animation-delay: .05s;
+}
+
+.calc-card:nth-child(3) {
+  animation-delay: .10s;
+}
+
+.calc-card:nth-child(4) {
+  animation-delay: .15s;
+}
+
+.calc-card:nth-child(5) {
+  animation-delay: .20s;
+}
+
+.calc-card:nth-child(6) {
+  animation-delay: .25s;
+}
+
+
+/* ---------------------------------------------------------
+  ACCESSIBILITY:
+  REDUCE ANIMATIONS IF USER REQUESTS IT
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration: .01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: .01ms !important;
+
+    scroll-behavior: auto !important;
+
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+  MOBILE POLISH
+--------------------------------------------------------- */
+
+@media(max-width:760px) {
+
+  .site-header {
+    position: relative;
+  }
+
+
+  .calc-card:hover,
+  .result:hover,
+  .related-links a:hover {
+
+    transform: none;
+
+  }
+
+}
