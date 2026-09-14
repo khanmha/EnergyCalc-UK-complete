@@ -66,17 +66,104 @@
 <main class="page"><article class="container article">
   <div class="breadcrumb"><a href="/">Home</a> / <a href="/guides/">Guides</a></div>
   <h1 class="page-title">How to Find Your Appliance's Energy Usage</h1>
-  <p class="lead">The quality of a running-cost estimate depends heavily on the energy figure you enter.</p>
+  <p class="lead">Choosing the right appliance energy usage figure makes your running-cost estimate more useful. You may find watts (W), kilowatts (kW), kilowatt-hours (kWh), kWh per cycle, kWh per 100 cycles or annual kWh consumption. Match the measurement to the calculator's input before entering a number.</p>
   <section class="card content-card">
     <h2>1. Check the energy label</h2>
-    <p>Modern appliance labels can show consumption as kWh per cycle, kWh per 100 cycles or another standardised usage figure. If a washing machine or dishwasher shows kWh per 100 cycles, divide by 100 to estimate one cycle.</p>
+    <p>Energy labels do not all use the same format. A figure in kWh per cycle describes electricity used for one complete programme under specified test conditions. A figure in kWh per 100 cycles covers 100 of those cycles, so divide it by 100 to estimate one.</p>
+    <div class="formula">47 kWh per 100 cycles ÷ 100 = 0.47 kWh per cycle</div>
+    <p>Enter 0.47 into a calculator asking for energy used per cycle, rather than 47. Check the label's programme description: the figure may apply to a particular eco programme, not every available setting.</p>
+    <p>Annual kWh consumption represents a year's use under the label's stated assumptions. It is not a per-cycle figure. Real-world consumption can differ with programme choice, load, room conditions and frequency of use; read the accompanying product information to understand the basis.</p>
+
     <h2>2. Check the rating plate</h2>
-    <p>Kettles, heaters, microwaves, computers and many smaller appliances show a wattage or power rating on a label. Wattage describes power, not total energy used.</p>
+    <p>Kettles, heaters, microwaves, computers and smaller appliances often have a label showing watts or kilowatts. Look for electrical input power and the model number. Wattage describes power, not the total electricity used during a session. Check accessible labels only; there is no need to remove covers or move heavy appliances to obtain a figure.</p>
+
     <h2>3. Use the manufacturer's specification</h2>
-    <p>Manufacturer product pages and manuals often list rated input power or energy consumption. Use electrical input power rather than cooking/output power where the two differ.</p>
-    <h2>4. Measure variable devices when possible</h2>
-    <p>Gaming PCs, thermostatic heaters, fridges and other devices can vary their power draw. A plug-in energy monitor can provide a more representative average than the maximum rating.</p>
+    <p>Search the manufacturer's website or manual using the exact model number. Look for rated input power or programme energy consumption. For microwaves, use electrical input power when available, rather than cooking/output wattage: the two describe different things. Check units and programme notes before copying a specification into a calculator.</p>
+
+    <h2>Power rating vs actual energy use</h2>
+    <p>Watts measure power: how quickly electricity is being used. One kilowatt is 1,000 watts. Kilowatt-hours measure energy used over time, combining power with running time.</p>
     <div class="formula">kWh = (Watts ÷ 1,000) × Hours used</div>
+    <ul>
+      <li>2,000 W appliance running for 1 hour: 2,000 ÷ 1,000 × 1 = 2 kWh.</li>
+      <li>500 W appliance running for 2 hours: 500 ÷ 1,000 × 2 = 1 kWh.</li>
+    </ul>
+    <p>These examples assume steady power throughout. Maximum or rated wattage may not represent average consumption: thermostats cycle heating elements, and electronic devices draw different amounts as their workload changes.</p>
+  </section>
+
+  <section class="card content-card">
+    <h2>Examples of finding appliance energy usage</h2>
+    <h3>Washing machine: convert the label to one wash</h3>
+    <p>If your machine shows 47 kWh per 100 cycles, use 0.47 kWh per wash for the stated programme. Enter that figure and your realistic weekly wash count into the <a href="/calculators/washing-machine-running-cost-calculator/">washing machine running cost calculator</a>. Another programme may need a different energy figure.</p>
+    <h3>Electric heater: combine watts with time</h3>
+    <p>A heater drawing 2,000 W continuously for 30 minutes uses 1 kWh, because half an hour is 0.5 hours. Use wattage and running time in the <a href="/calculators/electric-heater-running-cost-calculator/">electric heater running cost calculator</a>. If its thermostat switches it off intermittently, this full-power estimate may be higher than actual consumption.</p>
+    <h3>Gaming PC: use system draw, not PSU capacity</h3>
+    <p>A power supply unit (PSU) capacity is not the PC's normal system power draw. Gaming, browsing and idle periods use different amounts. A realistic average measured at the socket is more useful for the <a href="/calculators/gaming-pc-electricity-cost-calculator/">gaming PC electricity cost calculator</a>. Account for a separate monitor separately if it was not included in your measurement.</p>
+  </section>
+
+  <section class="card content-card">
+    <h2>How to measure an appliance's electricity use</h2>
+    <h3>4. Measure variable devices when possible</h3>
+    <p>A plug-in electricity monitor can show power in watts and, depending on the model, accumulated energy in kWh. It can help with compatible plug-in appliances whose consumption varies, including computers, fridges and thermostatic devices.</p>
+    <p>Measure a realistic session or period covering normal activity and pauses. A momentary reading can miss heating cycles or idle time. If a monitor records 0.6 kWh over three hours, average power is 0.6 ÷ 3 × 1,000 = 200 W. That average describes the measured period.</p>
+    <p>Not every appliance can safely or practically use a normal plug-in monitor. Check its permitted load and follow both manufacturers' safety instructions. Hard-wired appliances require a different approach; use documented consumption or seek qualified advice rather than altering wiring.</p>
+  </section>
+
+  <section class="card content-card">
+    <h2>Common mistakes when checking appliance energy use</h2>
+    <ul>
+      <li>Confusing watts with kWh: power and energy are different measurements.</li>
+      <li>Entering kWh per 100 cycles as one cycle: divide by 100 first.</li>
+      <li>Using a gaming PC's PSU capacity as its actual power draw.</li>
+      <li>Using microwave cooking/output wattage when electrical input power is available.</li>
+      <li>Forgetting running time or entering minutes into an hours field.</li>
+      <li>Assuming maximum rated power is drawn throughout every session.</li>
+      <li>Entering a cost in pounds or pence where energy consumption in kWh is requested.</li>
+    </ul>
+
+    <h2>Which energy figure should I enter into the calculator?</h2>
+    <ul>
+      <li><strong>Energy used per cycle:</strong> use kWh for one complete cycle.</li>
+      <li><strong>Label gives kWh per 100 cycles:</strong> divide by 100 before entering a per-cycle value.</li>
+      <li><strong>Watts:</strong> use electrical input power or a realistic measured average where appropriate.</li>
+      <li><strong>Hours used:</strong> enter actual running time; divide minutes by 60.</li>
+      <li><strong>Only know wattage and time:</strong> use the <a href="/calculators/generic-appliance-running-cost-calculator/">generic appliance running cost calculator</a>.</li>
+    </ul>
+
+    <h2>Energy usage and electricity price are different</h2>
+    <p>Appliance electricity consumption tells you how much energy is used. Your electricity unit rate tells you what each kWh costs. Multiply kWh by pence per kWh to estimate cost in pence. Both figures matter; use your own tariff with help from our <a href="/guides/uk-electricity-unit-rate-guide/">UK electricity unit rate guide</a>.</p>
+  </section>
+
+  <section class="card content-card">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item">
+      <h3>Is wattage the same as electricity usage?</h3>
+      <p>No. Wattage describes the rate of electricity use at a given moment, while energy consumption includes duration. A small device left on for many hours can consume more energy than a powerful device used briefly. For a running-cost estimate, use a measured kWh figure or combine suitable wattage with the time spent running.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What does kWh per 100 cycles mean?</h3>
+      <p>It is the electricity consumption for 100 repetitions of the programme specified on the label. Dividing the number by 100 gives an estimate for a single cycle on that basis. You can then multiply by your own number of washes or dishwasher loads. It does not mean the appliance must run 100 times before the information becomes useful.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I use the maximum wattage printed on an appliance?</h3>
+      <p>It can provide a starting estimate when no better figure is available, provided it is electrical input power. However, multiplying maximum wattage by the whole session assumes that power is drawn continuously. For devices that adjust output or switch elements on and off, programme consumption or a representative measured average is usually more useful.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Where can I find appliance energy information if the label is missing?</h3>
+      <p>Try the model's manual, the manufacturer's product page or its downloadable product information sheet. Use the complete model reference, because similar-looking appliances can have different specifications. Manufacturer support may help if an older model is no longer listed. Check that any figure you find describes electrical consumption and includes the units needed by your chosen calculator.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is a plug-in energy monitor more accurate?</h3>
+      <p>A suitable monitor can make an estimate more representative of your own appliance and routine, but it is not automatically exact. Results depend on the monitor's accuracy and the period measured. Recording a complete programme or several typical sessions is more informative than one instant reading. Always check compatibility and permitted load before using a monitor.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why can actual electricity use differ from the energy label?</h3>
+      <p>Labels use specified conditions so products can be compared on a consistent basis. Your settings, load size, surrounding temperature and appliance condition may differ from those conditions. Annual figures also rely on assumptions about use. Treat the label as a useful reference, then adjust for your routine or measure suitable appliances when you need a more personalised estimate.</p>
+    </div>
+  </section>
+
+  <section class="card content-card">
+    <h2>Calculate your appliance running cost</h2>
+    <p>Once you know the appropriate energy figure, choose an <a href="/#calculators">EnergyCalc UK electricity cost calculator</a> and enter your own electricity rate. Use realistic frequency and running time to estimate appliance running cost for your household.</p>
   </section>
 </article></main>
 
