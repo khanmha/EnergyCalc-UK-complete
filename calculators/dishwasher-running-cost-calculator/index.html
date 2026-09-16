@@ -80,13 +80,13 @@
       <form class="form-grid">
         <div>
           <label for="rate">Electricity price</label>
-          <div class="input-wrap"><input id="rate" name="rate" type="number" min="0" step="0.01" value="26.11" required><span class="unit">p/kWh</span></div>
-          <div class="help">Replace the default with the unit rate shown on your electricity bill if different.</div>
+          <div class="input-wrap"><input id="rate" name="rate" type="number" min="0" step="0.01" value="26.11" required aria-describedby="rate-unit rate-help"><span class="unit" id="rate-unit">p/kWh</span></div>
+          <div class="help" id="rate-help">Replace the default with the unit rate shown on your electricity bill if different. Not sure which rate to use? See our <a href="/guides/uk-electricity-unit-rate-guide/">UK electricity unit rate guide</a>.</div>
         </div>
         <div>
           <label for="kwh">Energy used per cycle</label>
-          <div class="input-wrap"><input id="kwh" name="kwh" type="number" min="0" step="0.01" value="0.85" required><span class="unit">kWh</span></div>
-          <div class="help">Use the appliance energy label, manual or manufacturer's specification page where possible.</div>
+          <div class="input-wrap"><input id="kwh" name="kwh" type="number" min="0" step="0.01" value="0.85" required aria-describedby="kwh-unit kwh-help"><span class="unit" id="kwh-unit">kWh</span></div>
+          <div class="help" id="kwh-help">Use the appliance energy label, manual or manufacturer's specification page where possible. Need help finding this figure? Read our <a href="/guides/how-to-find-appliance-energy-use/">appliance energy usage guide</a>.</div>
         </div>
         <div>
           <label for="usesWeek">Cycles per week</label>
@@ -140,7 +140,7 @@
     
     <section class="card content-card">
       <h2>Other Electricity Cost Calculators</h2>
-      <p>Compare other household appliances using the same electricity rate.</p>
+      <p>Compare other household appliances using the same electricity rate. See <a href="/guides/compare-appliance-running-costs/">how to compare running costs fairly</a>.</p>
       <div class="related-links"><a href="/calculators/washing-machine-running-cost-calculator/">Washing Machine Cost Calculator →</a>
 <a href="/calculators/tumble-dryer-running-cost-calculator/">Tumble Dryer Cost Calculator →</a>
 <a href="/calculators/kettle-running-cost-calculator/">Kettle Cost Calculator →</a>

@@ -1,127 +1,133 @@
-
 (function(){
-  const money = n => "£" + Number(n).toFixed(2);
-  const num = (form, name) => Number(form.elements[name]?.value || 0);
+  const labels = {
+    rate: "Electricity price", kwh: "Energy per cycle", watts: "Appliance power",
+    minutes: "Minutes per use", usesDay: "Uses per day", usesWeek: "Uses per week",
+    hoursDay: "Hours used per active day", daysWeek: "Active days per week",
+    battery: "Battery capacity", added: "Battery percentage added", efficiency: "Charging efficiency"
+  };
+  const fields = {
+    cycle: ["rate", "kwh", "usesWeek"],
+    "power-day": ["rate", "watts", "minutes", "usesDay"],
+    "power-week": ["rate", "watts", "minutes", "usesWeek"],
+    "power-hours": ["rate", "watts", "hoursDay", "daysWeek"],
+    ev: ["rate", "battery", "added", "efficiency", "usesWeek"]
+  };
 
-  function setText(root, key, value){
-    const el = root.querySelector(`[data-out="${key}"]`);
-    if(el) el.textContent = value;
-  }
-
-  function showResults(root){
-    const results = root.querySelector(".results");
-    if(results){
-      results.classList.add("is-visible");
-      results.scrollIntoView({behavior:"smooth", block:"nearest"});
+  function readValues(form, kind){
+    const values = {};
+    for(const name of fields[kind]){
+      const raw = form.elements[name]?.value;
+      if(raw == null || String(raw).trim() === ""){
+        throw new Error(`Please enter ${labels[name].toLowerCase()}.`);
+      }
+      const value = Number(raw);
+      if(!Number.isFinite(value)){
+        throw new Error(`${labels[name]} must be a finite number.`);
+      }
+      const minimum = name === "efficiency" ? 1 : 0;
+      const maximum = {hoursDay: 24, daysWeek: 7, added: 100, efficiency: 100}[name];
+      if(value < minimum || (maximum !== undefined && value > maximum)){
+        throw new Error(maximum === undefined
+          ? `${labels[name]} must be zero or greater.`
+          : `${labels[name]} must be between ${minimum} and ${maximum}.`);
+      }
+      values[name] = value;
     }
+    return values;
   }
 
-  function calculateCycle(form, root){
-    const rateP = num(form,"rate");
-    const kwh = num(form,"kwh");
-    const usesWeek = num(form,"usesWeek");
-    const perUse = kwh * (rateP / 100);
-    const perWeek = perUse * usesWeek;
-    const perMonth = perWeek * 52 / 12;
-    const perYear = perWeek * 52;
+  function calculate(kind, v){
+    let energy, weeklyUses, annualUses, suffix = "";
+    if(kind === "cycle"){
+      energy = v.kwh;
+      weeklyUses = v.usesWeek;
+    }else if(kind === "power-day" || kind === "power-week"){
+      energy = (v.watts / 1000) * (v.minutes / 60);
+      weeklyUses = kind === "power-day" ? v.usesDay * 7 : v.usesWeek;
+      annualUses = kind === "power-day" ? v.usesDay * 365 : v.usesWeek * 52;
+    }else if(kind === "power-hours"){
+      energy = (v.watts / 1000) * v.hoursDay;
+      weeklyUses = v.daysWeek;
+      suffix = " active days";
+    }else if(kind === "ev"){
+      energy = (v.battery * (v.added / 100)) / (v.efficiency / 100);
+      weeklyUses = v.usesWeek;
+      suffix = " charging sessions";
+    }
+    if(annualUses === undefined) annualUses = weeklyUses * 52;
+    const perUse = energy * (v.rate / 100);
+    const perWeek = perUse * weeklyUses;
+    const annualKwh = energy * annualUses;
+    const perYear = kind === "power-day" ? annualKwh * (v.rate / 100) : perWeek * 52;
+    const perMonth = kind === "power-day" ? perYear / 12 : perWeek * 52 / 12;
+    const comparison = kind === "cycle" ? [1, 3, 5, 7, 10].map(uses => ({
+      uses, month: perUse * uses * 52 / 12, year: perUse * uses * 52
+    })) : [];
+    const numbers = [energy, weeklyUses, annualUses, perUse, perWeek, annualKwh, perYear, perMonth,
+      ...comparison.flatMap(row => [row.month, row.year])];
+    if(!numbers.every(Number.isFinite)){
+      throw new Error("These values produce a result that is too large. Please check your inputs.");
+    }
+    return {energy, annualUses, annualKwh, perUse, perWeek, perMonth, perYear, suffix, comparison};
+  }
 
-    setText(root,"perUse",money(perUse));
-    setText(root,"perWeek",money(perWeek));
-    setText(root,"perMonth",money(perMonth));
-    setText(root,"perYear",money(perYear));
-    setText(root,"annualUses",Math.round(usesWeek*52).toLocaleString("en-GB"));
-    setText(root,"annualKwh",(kwh*usesWeek*52).toFixed(1)+" kWh");
-
+  function render(root, result, kind, scroll){
+    const money = n => "£" + n.toFixed(2);
+    const outputs = {
+      perUse: money(result.perUse), perWeek: money(result.perWeek),
+      perMonth: money(result.perMonth), perYear: money(result.perYear),
+      annualUses: Math.round(result.annualUses).toLocaleString("en-GB") + result.suffix,
+      annualKwh: result.annualKwh.toFixed(1) + " kWh"
+    };
+    if(kind === "power-day" || kind === "power-week") outputs.kwhPerUse = result.energy.toFixed(3) + " kWh";
+    if(kind === "ev") outputs.energyPerCharge = result.energy.toFixed(1) + " kWh";
+    for(const [key, value] of Object.entries(outputs)){
+      const el = root.querySelector(`[data-out="${key}"]`);
+      if(el) el.textContent = value;
+    }
     const tbody = root.querySelector("[data-comparison]");
     if(tbody){
-      tbody.innerHTML="";
-      [1,3,5,7,10].forEach(v=>{
-        const wk = perUse*v;
-        const mo = wk*52/12;
-        const yr = wk*52;
-        const tr=document.createElement("tr");
-        tr.innerHTML=`<td>${v}</td><td>${money(mo)}</td><td>${money(yr)}</td>`;
+      tbody.innerHTML = "";
+      result.comparison.forEach(row => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `<td>${row.uses}</td><td>${money(row.month)}</td><td>${money(row.year)}</td>`;
         tbody.appendChild(tr);
       });
     }
-    showResults(root);
+    const results = root.querySelector(".results");
+    if(results){
+      results.classList.add("is-visible");
+      if(scroll){
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        results.scrollIntoView({behavior: reduceMotion ? "instant" : "smooth", block: "nearest"});
+      }
+    }
   }
 
-  function calculatePowerUses(form, root, frequency){
-    const rateP = num(form,"rate");
-    const watts = num(form,"watts");
-    const minutes = num(form,"minutes");
-    const uses = num(form, frequency==="day" ? "usesDay" : "usesWeek");
-    const kwhPerUse = (watts/1000)*(minutes/60);
-    const perUse = kwhPerUse*(rateP/100);
-    const perWeek = frequency==="day" ? perUse*uses*7 : perUse*uses;
-    const perMonth = perWeek*52/12;
-    const perYear = perWeek*52;
-
-    setText(root,"perUse",money(perUse));
-    setText(root,"perWeek",money(perWeek));
-    setText(root,"perMonth",money(perMonth));
-    setText(root,"perYear",money(perYear));
-    const annualUses = frequency==="day" ? uses*365 : uses*52;
-    setText(root,"annualUses",Math.round(annualUses).toLocaleString("en-GB"));
-    setText(root,"annualKwh",(kwhPerUse*annualUses).toFixed(1)+" kWh");
-    setText(root,"kwhPerUse",kwhPerUse.toFixed(3)+" kWh");
-    showResults(root);
-  }
-
-  function calculatePowerHours(form, root){
-    const rateP = num(form,"rate");
-    const watts = num(form,"watts");
-    const hours = num(form,"hoursDay");
-    const days = num(form,"daysWeek");
-    const kwhDay=(watts/1000)*hours;
-    const costDay=kwhDay*(rateP/100);
-    const perWeek=costDay*days;
-    const perMonth=perWeek*52/12;
-    const perYear=perWeek*52;
-
-    setText(root,"perUse",money(costDay));
-    setText(root,"perWeek",money(perWeek));
-    setText(root,"perMonth",money(perMonth));
-    setText(root,"perYear",money(perYear));
-    setText(root,"annualUses",Math.round(days*52).toLocaleString("en-GB")+" active days");
-    setText(root,"annualKwh",(kwhDay*days*52).toFixed(1)+" kWh");
-    showResults(root);
-  }
-
-  function calculateEV(form, root){
-    const rateP=num(form,"rate");
-    const battery=num(form,"battery");
-    const added=num(form,"added");
-    const efficiency=Math.max(1,num(form,"efficiency"))/100;
-    const usesWeek=num(form,"usesWeek");
-    const energyFromGrid=(battery*(added/100))/efficiency;
-    const perCharge=energyFromGrid*(rateP/100);
-    const perWeek=perCharge*usesWeek;
-    const perMonth=perWeek*52/12;
-    const perYear=perWeek*52;
-    setText(root,"perUse",money(perCharge));
-    setText(root,"perWeek",money(perWeek));
-    setText(root,"perMonth",money(perMonth));
-    setText(root,"perYear",money(perYear));
-    setText(root,"annualUses",Math.round(usesWeek*52).toLocaleString("en-GB")+" charging sessions");
-    setText(root,"annualKwh",(energyFromGrid*usesWeek*52).toFixed(1)+" kWh");
-    setText(root,"energyPerCharge",energyFromGrid.toFixed(1)+" kWh");
-    showResults(root);
-  }
-
-  document.querySelectorAll("[data-calculator]").forEach(root=>{
-    const form=root.querySelector("form");
-    if(!form) return;
-    form.addEventListener("submit",e=>{
-      e.preventDefault();
-      const kind=root.dataset.calculator;
-      if(kind==="cycle") calculateCycle(form,root);
-      if(kind==="power-day") calculatePowerUses(form,root,"day");
-      if(kind==="power-week") calculatePowerUses(form,root,"week");
-      if(kind==="power-hours") calculatePowerHours(form,root);
-      if(kind==="ev") calculateEV(form,root);
+  document.querySelectorAll("[data-calculator]").forEach(root => {
+    const form = root.querySelector("form");
+    const kind = root.dataset.calculator;
+    if(!form || !fields[kind]) return;
+    const error = document.createElement("p");
+    error.className = "note";
+    error.setAttribute("role", "alert");
+    error.hidden = true;
+    form.appendChild(error);
+    function update(scroll){
+      try{
+        const result = calculate(kind, readValues(form, kind));
+        error.hidden = true;
+        error.textContent = "";
+        render(root, result, kind, scroll);
+      }catch(problem){
+        error.textContent = problem.message;
+        error.hidden = false;
+      }
+    }
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      update(true);
     });
-    form.dispatchEvent(new Event("submit",{cancelable:true,bubbles:true}));
+    update(false);
   });
 })();

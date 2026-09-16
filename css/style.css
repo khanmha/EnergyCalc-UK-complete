@@ -93,7 +93,7 @@ img{max-width:100%}
 }
 .calc-card{min-height:215px;display:flex;flex-direction:column}
 .calc-card .icon{font-size:2rem;margin-bottom:18px}
-.calc-card h3{font-size:1.15rem;margin:0 0 7px}
+.calc-card h2,.calc-card h3{font-size:1.15rem;margin:0 0 7px}
 .calc-card p{color:var(--muted);margin:0 0 18px}
 .calc-card .link{margin-top:auto;font-weight:750}
 .badge{
@@ -421,8 +421,8 @@ body {
   background:
     linear-gradient(
       135deg,
-      var(--brand),
-      #10a897
+      var(--brand-dark),
+      #08766b
     );
 
   box-shadow:
@@ -444,7 +444,7 @@ body {
     linear-gradient(
       135deg,
       var(--brand-dark),
-      var(--brand)
+      #08766b
     );
 }
 
@@ -466,7 +466,7 @@ body {
     linear-gradient(
       90deg,
       transparent,
-      rgba(255,255,255,.25),
+      rgba(255,255,255,.04),
       transparent
     );
 
@@ -910,3 +910,11 @@ th {
   }
 
 }
+/* Phase 2: preserve form layout while allowing narrow screens and long values. */
+.input-wrap input{flex:1 1 0%;min-width:0}
+.input-wrap .unit{flex:0 0 auto}
+.form-grid,.form-grid > div,.result,.related-links a{min-width:0}
+.result strong,.summary strong,.related-links a{overflow-wrap:anywhere}
+.button:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.reference-rate{font-size:1.17em;font-weight:bold;margin-block:1em 6px}
+.button.secondary:hover,.button.secondary:focus-visible{background:#fff;color:var(--brand-dark)}

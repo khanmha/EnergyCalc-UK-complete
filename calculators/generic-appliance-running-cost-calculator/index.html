@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G0NBJ3JCKV"></script>
+  <meta charset="utf-8">
 <!-- 1. Default consent settings -->
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -40,7 +39,6 @@
   gtag('js', new Date());
   gtag('config', 'G-G0NBJ3JCKV');
 </script>
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Appliance Running Cost Calculator UK | EnergyCalc UK</title>
   <meta name="description" content="Use this general calculator for TVs, dehumidifiers, fans, computers and other electrical appliances.">
@@ -82,15 +80,17 @@
       <form class="form-grid">
         <div>
           <label for="rate">Electricity price</label>
-          <div class="input-wrap"><input id="rate" name="rate" type="number" min="0" step="0.01" value="26.11" required><span class="unit">p/kWh</span></div>
+          <div class="input-wrap"><input id="rate" name="rate" type="number" min="0" step="0.01" value="26.11" required aria-describedby="rate-unit rate-help"><span class="unit" id="rate-unit">p/kWh</span></div>
+          <div class="help" id="rate-help">Not sure which rate to use? See our <a href="/guides/uk-electricity-unit-rate-guide/">UK electricity unit rate guide</a>.</div>
         </div>
         <div>
           <label for="watts">Average power draw</label>
-          <div class="input-wrap"><input id="watts" name="watts" type="number" min="0" step="1" value="1000" required><span class="unit">watts</span></div>
+          <div class="input-wrap"><input id="watts" name="watts" type="number" min="0" step="1" value="1000" required aria-describedby="watts-unit watts-help"><span class="unit" id="watts-unit">watts</span></div>
+          <div class="help" id="watts-help">Need help finding this figure? Read our <a href="/guides/how-to-find-appliance-energy-use/">appliance energy usage guide</a>.</div>
         </div>
         <div>
           <label for="hoursDay">Hours used per active day</label>
-          <div class="input-wrap"><input id="hoursDay" name="hoursDay" type="number" min="0" step="0.1" value="2" required><span class="unit">hours</span></div>
+          <div class="input-wrap"><input id="hoursDay" name="hoursDay" type="number" min="0" max="24" step="0.1" value="2" required aria-describedby="hoursDay-unit"><span class="unit" id="hoursDay-unit">hours</span></div>
         </div>
         <div>
           <label for="daysWeek">Days used per week</label>
@@ -133,13 +133,16 @@
     
     <section class="card content-card">
       <h2>Other Electricity Cost Calculators</h2>
-      <p>Compare other household appliances using the same electricity rate.</p>
+      <p>Compare other household appliances using the same electricity rate. See <a href="/guides/compare-appliance-running-costs/">how to compare running costs fairly</a>.</p>
       <div class="related-links"><a href="/calculators/washing-machine-running-cost-calculator/">Washing Machine Cost Calculator →</a>
 <a href="/calculators/tumble-dryer-running-cost-calculator/">Tumble Dryer Cost Calculator →</a>
 <a href="/calculators/dishwasher-running-cost-calculator/">Dishwasher Cost Calculator →</a>
 <a href="/calculators/kettle-running-cost-calculator/">Kettle Cost Calculator →</a>
 <a href="/calculators/oven-running-cost-calculator/">Oven Cost Calculator →</a>
-<a href="/calculators/microwave-running-cost-calculator/">Microwave Cost Calculator →</a></div>
+<a href="/calculators/microwave-running-cost-calculator/">Microwave Cost Calculator →</a>
+<a href="/calculators/electric-heater-running-cost-calculator/">Electric heater costs →</a>
+<a href="/calculators/gaming-pc-electricity-cost-calculator/">Gaming PC costs →</a>
+<a href="/calculators/ev-charging-cost-calculator/">EV charging: battery and charging-loss inputs →</a></div>
     </section>
   </div>
 </main>

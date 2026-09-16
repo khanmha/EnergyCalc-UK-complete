@@ -80,19 +80,21 @@
       <form class="form-grid">
         <div>
           <label for="rate">Electricity price</label>
-          <div class="input-wrap"><input id="rate" name="rate" type="number" min="0" step="0.01" value="26.11" required><span class="unit">p/kWh</span></div>
+          <div class="input-wrap"><input id="rate" name="rate" type="number" min="0" step="0.01" value="26.11" required aria-describedby="rate-unit rate-help"><span class="unit" id="rate-unit">p/kWh</span></div>
+          <div class="help" id="rate-help">Not sure which rate to use? See our <a href="/guides/uk-electricity-unit-rate-guide/">UK electricity unit rate guide</a>.</div>
         </div>
         <div>
           <label for="battery">Usable battery capacity</label>
-          <div class="input-wrap"><input id="battery" name="battery" type="number" min="0" step="0.1" value="60" required><span class="unit">kWh</span></div>
+          <div class="input-wrap"><input id="battery" name="battery" type="number" min="0" step="0.1" value="60" required aria-describedby="battery-unit battery-help"><span class="unit" id="battery-unit">kWh</span></div>
+          <div class="help" id="battery-help">Use your vehicle’s usable battery capacity in kWh. Our <a href="/guides/how-to-find-appliance-energy-use/">energy units guide</a> explains how kWh differs from power in watts.</div>
         </div>
         <div>
           <label for="added">Battery percentage added</label>
-          <div class="input-wrap"><input id="added" name="added" type="number" min="0" max="100" step="1" value="50" required><span class="unit">%</span></div>
+          <div class="input-wrap"><input id="added" name="added" type="number" min="0" max="100" step="1" value="50" required aria-describedby="added-unit"><span class="unit" id="added-unit">%</span></div>
         </div>
         <div>
           <label for="efficiency">Charging efficiency</label>
-          <div class="input-wrap"><input id="efficiency" name="efficiency" type="number" min="1" max="100" step="1" value="90" required><span class="unit">%</span></div>
+          <div class="input-wrap"><input id="efficiency" name="efficiency" type="number" min="1" max="100" step="1" value="90" required aria-describedby="efficiency-unit"><span class="unit" id="efficiency-unit">%</span></div>
         </div>
         <div>
           <label for="usesWeek">Charging sessions per week</label>
@@ -141,7 +143,8 @@
 <a href="/calculators/dishwasher-running-cost-calculator/">Dishwasher Cost Calculator →</a>
 <a href="/calculators/kettle-running-cost-calculator/">Kettle Cost Calculator →</a>
 <a href="/calculators/oven-running-cost-calculator/">Oven Cost Calculator →</a>
-<a href="/calculators/microwave-running-cost-calculator/">Microwave Cost Calculator →</a></div>
+<a href="/calculators/microwave-running-cost-calculator/">Microwave Cost Calculator →</a>
+<a href="/calculators/generic-appliance-running-cost-calculator/">Other plug-in appliances →</a></div>
     </section>
   </div>
 </main>
