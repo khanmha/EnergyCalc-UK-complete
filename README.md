@@ -26,7 +26,7 @@ This package is designed to replace the current development folder as one clean 
 - EV Charging Cost Calculator UK
 
 ## Current default electricity rate
-26.11p/kWh, based on Ofgem's average Direct Debit electricity unit rate for 1 July–30 September 2026.
+26.32p/kWh, based on Ofgem's average Direct Debit electricity unit rate for 1 October–31 December 2026.
 
 ## Test locally
 Open `index.html` in a browser. All calculators use relative paths and should work from `file://`.
