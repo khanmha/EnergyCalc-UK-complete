@@ -40,11 +40,11 @@
 </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>EV Charging Cost Calculator UK | EnergyCalc UK</title>
-  <meta name="description" content="Estimate home EV charging cost from battery size, percentage added, charging efficiency and your electricity unit rate.">
+  <title>EV Charging Cost Calculator UK (2026) – Home &amp; Full Charge</title>
+  <meta name="description" content="Calculate UK EV home charging cost per session or full charge. Include usable battery capacity and charging losses at 26.32p/kWh or your own tariff.">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="EV Charging Cost Calculator UK | EnergyCalc UK">
-  <meta property="og:description" content="Estimate home EV charging cost from battery size, percentage added, charging efficiency and your electricity unit rate.">
+  <meta property="og:title" content="EV Charging Cost Calculator UK (2026) – Home &amp; Full Charge">
+  <meta property="og:description" content="Calculate UK EV home charging cost per session or full charge. Include usable battery capacity and charging losses at 26.32p/kWh or your own tariff.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0d7f74">
     <link rel="canonical" href="https://www.ukenergycalc.co.uk/calculators/ev-charging-cost-calculator/">
@@ -63,12 +63,17 @@
     </nav>
   </div>
 </header>
-<main class="page">
+<main class="page calculator-detail">
   <div class="container">
     <div class="breadcrumb"><a href="/">Home</a> / <a href="/#calculators">Calculators</a> / EV Charging Cost Calculator</div>
     <h1 class="page-title">EV Charging Cost Calculator UK</h1>
     <p class="lead">Estimate home EV charging cost from battery size, percentage added, charging efficiency and your electricity unit rate.</p>
     
+    <section class="card content-card">
+      <h2>How much does it cost to charge an EV at home?</h2>
+      <p>With the example 60kWh usable battery, adding 50 percentage points stores 30kWh. At 90% charging efficiency, that draws about 33.33kWh from the grid and costs £8.77 at 26.32p/kWh. A full 0–100% charge under the same assumptions costs about £17.55.</p>
+    </section>
+
 <div class="update-box">
   <strong>Updated: November 2026</strong>
   <p>The calculator defaults to <strong>26.32p per kWh</strong>, the Ofgem average electricity unit rate for a standard variable tariff paid by Direct Debit from 1 October to 31 December 2026. Your own tariff may be different.</p>
@@ -107,13 +112,15 @@
   <section class="card">
     <h2>Your Estimated Running Costs</h2>
     <div class="result-grid">
-      <div class="result"><span>Per Charge</span><strong data-out="perUse">£0.00</strong></div>
+      <div class="result"><span>Full Charge (0–100%)</span><strong data-out="fullCharge">—</strong></div>
+      <div class="result"><span>Per Charging Session</span><strong data-out="perUse">£0.00</strong></div>
       <div class="result"><span>Per Week</span><strong data-out="perWeek">£0.00</strong></div>
       <div class="result"><span>Per Month</span><strong data-out="perMonth">£0.00</strong></div>
       <div class="result"><span>Per Year</span><strong data-out="perYear">£0.00</strong></div>
     </div>
     <div class="summary">
       <h3>Usage Summary</h3>
+      <p>Monthly cost is weekly cost × 52 ÷ 12, an average month rather than a specific calendar month. Electricity costs exclude standing charges and other running expenses. Figures are rounded after calculation.</p>
       <p>Estimated annual use: <strong data-out="annualUses">—</strong></p>
       <p>Estimated electricity use per year: <strong data-out="annualKwh">—</strong></p>
     </div>
@@ -130,14 +137,21 @@
     </section>
 
     <section class="card content-card">
+      <h2>Full charge, charging losses and cost per mile</h2><p>For the example 60kWh usable battery at 90% efficiency, a full charge requires 60 ÷ 0.9 = about 66.67kWh from the grid. At 26.32p/kWh this costs about £17.55. The efficiency is an example input, not a measured loss for every vehicle.</p><p>Use usable battery capacity, which may differ from the advertised total. Enter percentage points added: charging from 20% to 80% means 60%, not 80%. Charging efficiency and tariffs can vary; if a session spans different unit rates, calculate each part separately.</p><p>To estimate electricity cost per mile, divide charging cost by the miles covered using that energy. The calculator has no mileage input, so it cannot calculate your per-mile result directly. If using vehicle battery kWh per mile, divide by charging efficiency before multiplying by the unit rate; if using measured wall kWh per mile, do not adjust for losses again.</p>
+    </section>
+
+    <section class="card content-card">
       <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><h3>How much does a full EV charge cost at home?</h3><p>For the example 60kWh usable battery and 90% charging efficiency, a 0–100% charge draws about 66.67kWh and costs about £17.55 at 26.32p/kWh. Battery capacity, losses and your tariff change the cost.</p></div>
+      <div class="faq-item"><h3>How do I work out EV electricity cost per mile?</h3><p>Divide the electricity cost for a charging period by the miles driven using that energy. Match energy and mileage periods and include charging losses once. The calculator does not have a mileage input.</p></div>
+      <div class="faq-item"><h3>Should I use usable or total battery capacity?</h3><p>Use usable battery capacity where available. Advertised total capacity can include energy buffers unavailable for normal driving, which can distort a percentage-based charging estimate.</p></div>
       <div class="faq-item"><h3>Why include charging efficiency?</h3><p>Some energy is lost between the wall and the battery. Efficiency lets the calculator estimate how much energy must be drawn from the grid.</p></div><div class="faq-item"><h3>Should I use my home tariff or public charging price?</h3><p>Enter the price you actually pay per kWh for the charging session you want to estimate.</p></div><div class="faq-item"><h3>Does this include standing charges or charger installation?</h3><p>No. It estimates electricity consumed for charging only.</p></div><div class="faq-item"><h3>Can I model a partial charge?</h3><p>Yes. Enter the percentage of the battery you expect to add, such as 40% or 60%.</p></div>
     </section>
 
     
     <section class="card content-card">
       <h2>Other Electricity Cost Calculators</h2>
-      <p>Compare other household appliances using the same electricity rate.</p>
+      <p>Compare other household appliances using the same electricity rate. Our <a href="/guides/compare-appliance-running-costs/">running-cost comparison guide</a> explains how to compare equivalent usage.</p>
       <div class="related-links"><a href="/calculators/washing-machine-running-cost-calculator/">Washing Machine Cost Calculator →</a>
 <a href="/calculators/tumble-dryer-running-cost-calculator/">Tumble Dryer Cost Calculator →</a>
 <a href="/calculators/dishwasher-running-cost-calculator/">Dishwasher Cost Calculator →</a>

@@ -60,15 +60,19 @@
     const annualKwh = energy * annualUses;
     const perYear = kind === "power-day" ? annualKwh * (v.rate / 100) : perWeek * 52;
     const perMonth = kind === "power-day" ? perYear / 12 : perWeek * 52 / 12;
+    const perHour = kind.startsWith("power-") ? (v.watts / 1000) * (v.rate / 100) : 0;
+    const perMinute = perHour / 60;
+    const perDay = kind === "power-day" ? perUse * v.usesDay : 0;
+    const fullCharge = kind === "ev" ? (v.battery / (v.efficiency / 100)) * (v.rate / 100) : 0;
     const comparison = kind === "cycle" ? [1, 3, 5, 7, 10].map(uses => ({
       uses, month: perUse * uses * 52 / 12, year: perUse * uses * 52
     })) : [];
-    const numbers = [energy, weeklyUses, annualUses, perUse, perWeek, annualKwh, perYear, perMonth,
+    const numbers = [perHour, perMinute, perDay, fullCharge, energy, weeklyUses, annualUses, perUse, perWeek, annualKwh, perYear, perMonth,
       ...comparison.flatMap(row => [row.month, row.year])];
     if(!numbers.every(Number.isFinite)){
       throw new Error("These values produce a result that is too large. Please check your inputs.");
     }
-    return {energy, annualUses, annualKwh, perUse, perWeek, perMonth, perYear, suffix, comparison};
+    return {perHour, perMinute, perDay, fullCharge, energy, annualUses, annualKwh, perUse, perWeek, perMonth, perYear, suffix, comparison};
   }
 
   function render(root, result, kind, scroll){
@@ -79,6 +83,12 @@
       annualUses: Math.round(result.annualUses).toLocaleString("en-GB") + result.suffix,
       annualKwh: result.annualKwh.toFixed(1) + " kWh"
     };
+    if(kind.startsWith("power-")){
+      outputs.perHour = (result.perHour * 100).toFixed(2) + "p";
+      outputs.perMinute = (result.perMinute * 100).toFixed(2) + "p";
+    }
+    if(kind === "power-day") outputs.perDay = money(result.perDay);
+    if(kind === "ev") outputs.fullCharge = money(result.fullCharge);
     if(kind === "power-day" || kind === "power-week") outputs.kwhPerUse = result.energy.toFixed(3) + " kWh";
     if(kind === "ev") outputs.energyPerCharge = result.energy.toFixed(1) + " kWh";
     for(const [key, value] of Object.entries(outputs)){

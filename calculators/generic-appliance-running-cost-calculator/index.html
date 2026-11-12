@@ -40,11 +40,11 @@
   gtag('config', 'G-G0NBJ3JCKV');
 </script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Appliance Running Cost Calculator UK | EnergyCalc UK</title>
-  <meta name="description" content="Use this general calculator for TVs, dehumidifiers, fans, computers and other electrical appliances.">
+  <title>Appliance Electricity Cost Calculator UK (2026) – Watts to Cost</title>
+  <meta name="description" content="Convert appliance watts to electricity cost per hour, day and month. Free UK kWh cost calculator using 26.32p/kWh or your own unit rate.">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="Appliance Running Cost Calculator UK | EnergyCalc UK">
-  <meta property="og:description" content="Use this general calculator for TVs, dehumidifiers, fans, computers and other electrical appliances.">
+  <meta property="og:title" content="Appliance Electricity Cost Calculator UK (2026) – Watts to Cost">
+  <meta property="og:description" content="Convert appliance watts to electricity cost per hour, day and month. Free UK kWh cost calculator using 26.32p/kWh or your own unit rate.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0d7f74">
     <link rel="canonical" href="https://www.ukenergycalc.co.uk/calculators/generic-appliance-running-cost-calculator/">
@@ -63,12 +63,17 @@
     </nav>
   </div>
 </header>
-<main class="page">
+<main class="page calculator-detail">
   <div class="container">
     <div class="breadcrumb"><a href="/">Home</a> / <a href="/#calculators">Calculators</a> / Generic Appliance Cost Calculator</div>
     <h1 class="page-title">Appliance Running Cost Calculator UK</h1>
     <p class="lead">Use this general calculator for TVs, dehumidifiers, fans, computers and other electrical appliances.</p>
     
+    <section class="card content-card">
+      <h2>Convert watts to electricity cost per hour</h2>
+      <p>At 26.32p/kWh, an appliance drawing 1,000W continuously costs 26.32p per hour. Two hours uses 2kWh and costs 52.64p. With seven active days per week, the calculator estimates £15.97 per average month. Enter your appliance’s actual or measured average draw.</p>
+    </section>
+
 <div class="update-box">
   <strong>Updated: November 2026</strong>
   <p>The calculator defaults to <strong>26.32p per kWh</strong>, the Ofgem average electricity unit rate for a standard variable tariff paid by Direct Debit from 1 October to 31 December 2026. Your own tariff may be different.</p>
@@ -103,6 +108,7 @@
   <section class="card">
     <h2>Your Estimated Running Costs</h2>
     <div class="result-grid">
+      <div class="result"><span>Cost per hour</span><strong data-out="perHour">—</strong></div>
       <div class="result"><span>Per Active Day</span><strong data-out="perUse">£0.00</strong></div>
       <div class="result"><span>Per Week</span><strong data-out="perWeek">£0.00</strong></div>
       <div class="result"><span>Per Month</span><strong data-out="perMonth">£0.00</strong></div>
@@ -110,6 +116,7 @@
     </div>
     <div class="summary">
       <h3>Usage Summary</h3>
+      <p>Monthly cost is weekly cost × 52 ÷ 12, an average month rather than a specific calendar month. Electricity costs exclude standing charges and other running expenses. Figures are rounded after calculation.</p>
       <p>Estimated annual use: <strong data-out="annualUses">—</strong></p>
       <p>Estimated electricity use per year: <strong data-out="annualKwh">—</strong></p>
     </div>
@@ -126,7 +133,14 @@
     </section>
 
     <section class="card content-card">
+      <h2>Watts to kWh to electricity cost</h2><p>Divide watts by 1,000 to get kW. Multiply by hours to get kWh, then multiply by your unit rate: (watts ÷ 1,000) × hours × 26.32 gives pence at the reference tariff. Divide by 100 for pounds.</p><p>For a 500W appliance used for two hours, energy is 1kWh and cost is 26.32p. This is a worked example, not an appliance consumption claim. If you already know total kWh, multiply that figure directly by your p/kWh rate.</p><p>Use measured average watts for cycling appliances, or calculate separate operating modes and add the costs. For a programme’s total kWh, the <a href="/calculators/washing-machine-running-cost-calculator/">washing machine calculator</a> illustrates a per-cycle method.</p>
+    </section>
+
+    <section class="card content-card">
       <h2>Frequently Asked Questions</h2>
+      <div class="faq-item"><h3>How do I convert watts to electricity cost?</h3><p>Divide watts by 1,000, multiply by hours, then multiply by your electricity rate in p/kWh. The result is pence. For example, 1000W for two hours uses 2kWh and costs 52.64p at 26.32p/kWh.</p></div>
+      <div class="faq-item"><h3>How do I calculate cost from kWh?</h3><p>Multiply kWh by the unit rate. At 26.32p/kWh, 5kWh costs 131.60p, or about £1.32. Do not multiply by hours again if the kWh already represents the full usage period.</p></div>
+      <div class="faq-item"><h3>Why is the monthly cost not daily cost times 30?</h3><p>This calculator uses your active days per week, multiplies weekly cost by 52 and divides by 12. It estimates an average month rather than a specific calendar month.</p></div>
       <div class="faq-item"><h3>What wattage should I enter?</h3><p>Use the appliance's rated or measured average power. A plug-in energy monitor can give a more realistic figure for appliances whose power changes during use.</p></div><div class="faq-item"><h3>Can I use this for devices with thermostats?</h3><p>Yes, but rated wattage may overestimate cost if the device cycles on and off. Measured average power is better.</p></div><div class="faq-item"><h3>Does this include standing charges?</h3><p>No. Standing charges are fixed daily charges and are not caused by a single appliance, so the calculator focuses on energy used.</p></div>
     </section>
 

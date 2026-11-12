@@ -40,11 +40,11 @@
 </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Washing Machine Running Cost Calculator UK | EnergyCalc UK</title>
-  <meta name="description" content="Estimate your UK washing machine running cost and cost per wash from electricity usage in kWh, using your own electricity rate.">
+  <title>Washing Machine Cost Calculator UK (2026) – Per Wash</title>
+  <meta name="description" content="Calculate UK washing machine electricity cost per wash, week and month. Use cycle kWh and the 26.32p/kWh reference rate, or your own tariff.">
   <meta name="robots" content="index,follow">
-  <meta property="og:title" content="Washing Machine Running Cost Calculator UK | EnergyCalc UK">
-  <meta property="og:description" content="Estimate your UK washing machine running cost and cost per wash from electricity usage in kWh, using your own electricity rate.">
+  <meta property="og:title" content="Washing Machine Cost Calculator UK (2026) – Per Wash">
+  <meta property="og:description" content="Calculate UK washing machine electricity cost per wash, week and month. Use cycle kWh and the 26.32p/kWh reference rate, or your own tariff.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0d7f74">
     <link rel="canonical" href="https://www.ukenergycalc.co.uk/calculators/washing-machine-running-cost-calculator/">
@@ -63,12 +63,17 @@
     </nav>
   </div>
 </header>
-<main class="page">
+<main class="page calculator-detail">
   <div class="container">
     <div class="breadcrumb"><a href="/">Home</a> / <a href="/#calculators">Calculators</a> / Washing Machine Cost Calculator</div>
     <h1 class="page-title">Washing Machine Running Cost Calculator UK</h1>
     <p class="lead">Calculate how much your washing machine costs to run per wash, week, month and year using your own electricity rate.</p>
     
+    <section class="card content-card">
+      <h2>Washing machine cost per cycle, week and month</h2>
+      <p>At 26.32p/kWh, the example 0.75kWh wash costs 19.74p. Five washes per week cost about £0.99 weekly or £4.28 monthly. These are example inputs, not a typical value for every machine; water and detergent are excluded.</p>
+    </section>
+
 <div class="update-box">
   <strong>Updated: November 2026</strong>
   <p>The calculator defaults to <strong>26.32p per kWh</strong>, the Ofgem average electricity unit rate for a standard variable tariff paid by Direct Debit from 1 October to 31 December 2026. Your own tariff may be different.</p>
@@ -106,6 +111,7 @@
     </div>
     <div class="summary">
       <h3>Usage Summary</h3>
+      <p>Monthly cost is weekly cost × 52 ÷ 12, an average month rather than a specific calendar month. Electricity costs exclude standing charges and other running expenses. Figures are rounded after calculation.</p>
       <p>Estimated annual use: <strong data-out="annualUses">—</strong></p>
       <p>Estimated electricity use per year: <strong data-out="annualKwh">—</strong></p>
     </div>
@@ -114,7 +120,7 @@
       <div class="table-wrap">
         <h3>Washes Frequency Comparison</h3>
         <table>
-          <thead><tr><th>Uses per week</th><th>Monthly cost</th><th>Annual cost</th></tr></thead>
+          <thead><tr><th scope="col">Uses per week</th><th scope="col">Monthly cost</th><th scope="col">Annual cost</th></tr></thead>
           <tbody data-comparison></tbody>
         </table>
       </div>
@@ -124,7 +130,7 @@
       <h2>How Much Does It Cost to Run a Washing Machine?</h2>
       <p>Your washing machine's electricity cost depends on the energy consumed per cycle in kWh, your electricity price in p/kWh and the number of washes you run.</p>
       <div class="formula">Cost per wash = kWh per cycle × electricity price per kWh</div>
-      <p>Using the calculator's default example, 0.75 kWh × 26.32p/kWh = 19.74p, or about £0.20 per wash. At the default five washes per week, that is about £0.99 a week. These are example inputs, not a consumption figure for every machine.</p>
+      <p>Using the calculator's default example, 0.75 kWh × 26.32p/kWh = 19.74p, or about £0.20 per wash. At the default five washes per week, that is about £0.99 a week. These are example inputs, not a consumption figure for every machine. At five washes per week, the average monthly electricity cost is about £4.28 (weekly cost × 52 ÷ 12).</p>
       <p>Multiply the cost per wash by your number of washes to estimate the total electricity cost. Using a rate in p/kWh gives a cost in pence; divide by 100 for pounds. Enter your own tariff using the <a href="/guides/uk-electricity-unit-rate-guide/">UK electricity unit rate guide</a>. These estimates cover electricity only, excluding water and detergent.</p>
     </section>
 
@@ -147,14 +153,15 @@
       <div class="faq-item"><h3>How much electricity does a washing machine use?</h3><p>Use the kWh per cycle listed for your machine and programme, or divide the energy label's kWh per 100 cycles by 100. Temperature, load size, programme and machine efficiency affect actual use; the calculator's 0.75 kWh default is an example.</p></div>
       <div class="faq-item"><h3>How much does it cost to run a washing machine for one hour?</h3><p>Multiply the kWh actually consumed during that hour by your electricity rate per kWh. Power varies throughout a wash, so using maximum wattage for a whole hour can be misleading. For the cost of a complete wash, use measured cycle consumption or the programme's kWh figure in the calculator above.</p></div>
       <div class="faq-item"><h3>How many watts does a washing machine use?</h3><p>Check your machine's rating plate or manual for its rated power in watts (W) or kilowatts (kW). Actual power changes during the cycle, particularly when heating water, so the rating alone does not tell you the energy used or cost per wash.</p></div>
-      <div class="faq-item"><h3>Does washing at a lower temperature save electricity?</h3><p>Lower-temperature programmes can often use less electricity because less energy is required to heat the water, although actual consumption varies by appliance and programme.</p></div>
-      <div class="faq-item"><h3>Is this calculator exact?</h3><p>No. It estimates electricity costs from the values you enter. Programme, load, temperature and machine efficiency affect energy use, while your tariff determines the price per kWh.</p></div>
+      <div class="faq-item"><h3>Does a 30°C wash cost less than a 60°C wash?</h3><p>A 30°C programme can use less electricity than a 60°C programme because less water heating may be needed. Compare the stated or measured kWh for your actual programmes; duration, load and machine affect consumption, so there is no fixed saving.</p></div>
+      <div class="faq-item"><h3>How much does a washing machine cost per month?</h3><p>The example 0.75kWh wash, five times a week at 26.32p/kWh, costs about £4.28 per average month. This is an estimate from the values you enter, not an exact bill. Programme, load, temperature and machine efficiency affect energy use, while your tariff determines the price per kWh.</p></div>
       <div class="faq-item"><h3>What does kWh mean?</h3><p>kWh means kilowatt-hour, a standard unit used to measure electrical energy consumption.</p></div>
     </section>
 
     
     <section class="card content-card">
       <h2>Other Electricity Cost Calculators</h2>
+      <p>For other wattage-based estimates, use the <a href="/calculators/generic-appliance-running-cost-calculator/">appliance electricity cost calculator</a>.</p>
       <p>Compare other household appliances using the same electricity rate. See <a href="/guides/compare-appliance-running-costs/">how to compare running costs fairly</a>.</p>
       <div class="related-links"><a href="/calculators/tumble-dryer-running-cost-calculator/">Tumble Dryer Cost Calculator →</a>
 <a href="/calculators/dishwasher-running-cost-calculator/">Dishwasher Cost Calculator →</a>

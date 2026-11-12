@@ -918,3 +918,14 @@ th {
 .button:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
 .reference-rate{font-size:1.17em;font-weight:bold;margin-block:1em 6px}
 .button.secondary:hover,.button.secondary:focus-visible{background:#fff;color:var(--brand-dark)}
+
+/* Calculator detail pages: keep extra outputs and comparisons usable on narrow screens. */
+.calculator-detail .result-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr))}
+.calculator-detail .table-wrap{max-width:100%}
+.calculator-detail table{table-layout:fixed}
+.calculator-detail th,.calculator-detail td{overflow-wrap:anywhere}
+.calculator-detail .page-title,.calculator-detail .content-card h2{overflow-wrap:anywhere}
+@media(max-width:480px){
+  .calculator-detail .calc-shell,.calculator-detail .results > .card{padding:16px}
+  .calculator-detail th,.calculator-detail td{padding:10px 5px}
+}
