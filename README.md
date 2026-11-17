@@ -1,51 +1,68 @@
-# EnergyCalc UK — Complete Static Website
+# EnergyCalc UK
 
-This package is designed to replace the current development folder as one clean version.
+A static website for estimating UK appliance electricity running costs and EV charging costs. Users can adjust their electricity unit rate and usage assumptions to compare estimated costs over time.
 
-## What is included
-- Homepage
-- 11 working calculator pages
-- Shared responsive CSS
-- Shared calculator JavaScript
-- 3 supporting guides
-- About, Privacy, Disclaimer and Contact pages
-- robots.txt
-- sitemap-template.xml
+## Features
 
-## Calculator pages
-- Washing Machine Running Cost Calculator UK
-- Tumble Dryer Running Cost Calculator UK
-- Dishwasher Running Cost Calculator UK
-- Kettle Running Cost Calculator UK
-- Oven Running Cost Calculator UK
-- Microwave Running Cost Calculator UK
-- Air Fryer Electricity Cost Calculator UK
-- Electric Heater Running Cost Calculator UK
-- Gaming PC Electricity Cost Calculator UK
-- Appliance Running Cost Calculator UK
-- EV Charging Cost Calculator UK
+- Calculators for washing machines, tumble dryers, dishwashers, kettles, ovens, microwaves, air fryers, electric heaters, gaming PCs, general appliances and EV charging.
+- Shared JavaScript calculation logic for energy per cycle, power and duration, weekly use and EV charging efficiency.
+- Cost estimates per use, week, month and year, with additional outputs where appropriate.
+- Input checks for missing, non-finite and out-of-range values.
+- Responsive styling, supporting guides and informational pages.
+- Static hosting without a server-side application or build step.
 
-## Current default electricity rate
-26.32p/kWh, based on Ofgem's average Direct Debit electricity unit rate for 1 October–31 December 2026.
+## Technologies
 
-## Test locally
-Open `index.html` in a browser. All calculators use relative paths and should work from `file://`.
-For a more production-like test, use VS Code Live Server or run:
-`python3 -m http.server 8000`
+HTML, CSS and vanilla JavaScript.
 
-Then open:
-`http://localhost:8000/`
+## Run locally
 
-## Before publishing
-1. Buy/choose the final domain.
-2. Replace `hello@YOUR-DOMAIN.co.uk` in contact.html.
-3. Replace `YOUR-DOMAIN.co.uk` inside sitemap-template.xml.
-4. Rename sitemap-template.xml to sitemap.xml.
-5. Add `Sitemap: https://YOUR-DOMAIN.co.uk/sitemap.xml` to robots.txt.
-6. Add canonical URLs after the final domain is known.
-7. Connect Google Search Console after deployment.
-8. Add analytics/AdSense only after privacy/consent setup is appropriate.
-9. Re-check the Ofgem default rate every price-cap period.
+Download or clone the repository, then run the following command from the project folder if Python 3 is installed:
 
-## Important
-Do not mix these files into the broken folder one by one. Keep this package as a separate clean folder first, test it, then replace the old project only after you are satisfied.
+```bash
+python3 -m http.server 8000
+```
+
+Open `http://localhost:8000/` in your browser. You can also open `index.html` directly, although a local HTTP server more closely resembles static hosting.
+
+## How the estimates work
+
+For an appliance with a power rating:
+
+```text
+Energy (kWh) = power (watts) / 1000 × duration (hours)
+Cost (£) = energy (kWh) × electricity rate (p/kWh) / 100
+```
+
+For cycle-based appliances, the calculator uses the entered kWh per cycle. EV estimates use battery capacity, percentage added and charging efficiency.
+
+Weekly-use models use 52 weeks per year; daily-use models use 365 days. Monthly figures are annual estimates divided by 12.
+
+## Project structure
+
+| Path | Purpose |
+| --- | --- |
+| `index.html` | Homepage |
+| `calculators/` | Individual calculator pages |
+| `js/calculator.js` | Shared calculations, validation and result rendering |
+| `css/` | Shared styles |
+| `guides/` | Supporting explanations and comparisons |
+| `sitemap.xml`, `robots.txt` | Search discovery files |
+| `CNAME` | Custom-domain configuration |
+
+## Assumptions and limitations
+
+Results are estimates based on user inputs, not measured consumption. Actual usage varies with appliance settings, operating cycles and charging losses. Standing charges and other bill components are not included in the energy calculation.
+
+Default tariff values are dated assumptions rather than a live tariff feed. Enter the unit rate from your own electricity bill and review defaults when maintaining the site.
+
+## Maintaining or deploying a copy
+
+- Check that contact details, policy pages and any placeholders match the intended website.
+- Review `CNAME`, canonical URLs, `sitemap.xml` and `robots.txt` for the deployment domain.
+- Check calculator inputs and representative results before releasing changes.
+- Review analytics, advertising and consent configuration for the deployment.
+
+## Learning focus
+
+Translating practical calculations into browser interfaces, sharing logic across multiple pages and explaining assumptions clearly to users. Further improvements include automated calculation tests and broader accessibility checks.
