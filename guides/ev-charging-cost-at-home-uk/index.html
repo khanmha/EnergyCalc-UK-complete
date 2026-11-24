@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<!-- 1. Default consent settings -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied",
+    functionality_storage: "denied",
+    personalization_storage: "denied",
+    security_storage: "granted",
+    wait_for_update: 2000
+  });
+
+  gtag("set", "ads_data_redaction", true);
+  gtag("set", "url_passthrough", true);
+</script>
+
+<!-- 2. CookieYes cookie consent banner -->
+<script
+  id="cookieyes"
+  type="text/javascript"
+  src="https://cdn-cookieyes.com/client_data/2f6fa225e3655e7cc91df7879880acfe/script.js">
+</script>
+
+<!-- 3. Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G0NBJ3JCKV"></script>
+
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-G0NBJ3JCKV');
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EV Charging Cost at Home UK: Standard vs Off-Peak Tariffs | EnergyCalc UK</title>
+  <meta name="description" content="Compare electric car charging costs at home for 20–80% and full battery charges, including charging losses and illustrative off-peak tariffs.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="EV Charging Cost at Home UK: Standard vs Off-Peak Tariffs">
+  <meta property="og:description" content="Compare electric car charging costs at home for 20–80% and full battery charges, including charging losses and illustrative off-peak tariffs.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0d7f74">
+    <link rel="canonical" href="https://www.ukenergycalc.co.uk/guides/ev-charging-cost-at-home-uk/">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <style>
+    .cost-guide .table-wrap{max-width:100%}
+    .cost-guide table{table-layout:fixed}
+    .cost-guide th,.cost-guide td{overflow-wrap:anywhere}
+    .cost-guide caption{text-align:left;margin-bottom:10px;color:var(--muted)}
+    .cost-guide .page-title{overflow-wrap:anywhere}
+    .cost-guide .calculator-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .cost-guide .calculator-actions .button{white-space:normal;text-align:center;max-width:100%}
+    @media(max-width:480px){
+      .cost-guide .card{padding:18px}
+      .cost-guide th,.cost-guide td{padding:10px 5px;font-size:.9rem}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/">EnergyCalc UK</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/#calculators">Calculators</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about/">About</a>
+    </nav>
+  </div>
+</header>
+<main class="page"><article class="container article cost-guide">
+  <div class="breadcrumb"><a href="/">Home</a> / <a href="/guides/">Guides</a> / EV Charging Cost at Home UK</div>
+  <h1 class="page-title">EV Charging Cost at Home UK: Standard vs Off-Peak Tariffs</h1>
+  <p class="lead">Estimate how much electricity your car needs from the grid and compare home charging tariffs for the same energy and mileage.</p>
+  <section class="card content-card"><h2>Quick answer</h2><p>For a 60kWh usable battery, charging from 20% to 80% stores 36kWh. At an illustrative 90% charging efficiency, the wall supplies 40kWh. At 26.32p/kWh that costs £10.53. On an example 8p/kWh off-peak tariff the same energy would cost £3.20, provided the session fits the cheaper period.</p><div class="calculator-actions"><a class="button" href="/calculators/ev-charging-cost-calculator/">Calculate your EV charging cost</a></div></section>
+  <div class="update-box"><strong>Electricity reference: 1 October–31 December 2026</strong><p>Examples use <strong>26.32p/kWh</strong>, the Ofgem average unit rate for a standard variable electricity tariff paid by Direct Debit in Great Britain. Regional and individual tariffs vary. Check your bill or our <a href="/guides/uk-electricity-unit-rate-guide/">UK electricity unit rate guide</a>.</p></div>
+  <section class="card content-card"><h2>Cost to charge at home by battery size</h2><p>The table assumes charging from 20% to 80% (60 percentage points added), or from 0% to 100%, at 90% charging efficiency. It uses usable battery capacity, not advertised gross capacity. The 8p rate is an illustrative tariff, not a live supplier quote.</p><div class="table-wrap" role="region" aria-label="Illustrative home charging costs" tabindex="0"><table><caption>Illustrative home charging costs</caption><thead><tr><th scope="col">Usable battery</th><th scope="col">20–80% at 26.32p</th><th scope="col">Full charge at 26.32p</th><th scope="col">20–80% at 8p</th></tr></thead><tbody><tr><th scope="row">40kWh</th><td>£7.02</td><td>£11.70</td><td>£2.13</td></tr><tr><th scope="row">60kWh</th><td>£10.53</td><td>£17.55</td><td>£3.20</td></tr><tr><th scope="row">80kWh</th><td>£14.04</td><td>£23.40</td><td>£4.27</td></tr><tr><th scope="row">100kWh</th><td>£17.55</td><td>£29.24</td><td>£5.33</td></tr></tbody></table></div><p>The figures exclude standing charges, charger installation and any tariff-specific fees.</p></section>
+  <section class="card content-card"><h2>How to account for charging losses</h2><div class="formula">Grid kWh = usable capacity × fraction added ÷ charging efficiency</div><p>For 60kWh × 0.60 ÷ 0.90, the result is 40kWh from the wall. If your charger already reports grid kWh for that session, multiply the measured number directly by your tariff; do not add losses twice.</p></section>
+  <section class="card content-card"><h2>Off-peak tariff vs standard tariff</h2><p>An off-peak or EV tariff can make home charging cheaper if you can shift charging into lower-cost hours. Check the exact time window, any eligibility conditions, daytime unit rate and standing charge. See <a href="https://energysavingtrust.org.uk/advice/smart-charging-electric-vehicles/" target="_blank" rel="noopener">Energy Saving Trust's smart-charging guidance</a>.</p><p>If a 40kWh session draws 28kWh at 8p and 12kWh at 26.32p, the total is £2.24 + £3.16 = £5.40 (rounded). Do not assume the entire session will qualify for the cheaper price.</p><div class="formula">Mixed-tariff cost = sum of each period's kWh × its unit rate</div><p>Before switching tariff, compare the total household bill. A higher day rate or standing charge could offset some savings on EV charging.</p></section>
+  <section class="card content-card"><h2>Can a charge fit into an off-peak window?</h2><p>A charger delivering an illustrative 7kW from the wall could draw up to 28kWh over four hours if that power is sustained. A 40kWh session at that draw would need about 5.7 hours. Actual draw can be limited by the car, charger, battery temperature, settings or charging taper. Follow your charger and vehicle instructions.</p></section>
+  <section class="card content-card"><h2>Translate charging cost into cost per mile</h2><p>If the example 40kWh from the wall supports 150 miles of driving, the electricity-only cost at the reference rate is 7.0p per mile; at 8p/kWh it is 2.1p per mile. The distance is illustrative. Use your own measured wall energy and mileage across the same period for a fair estimate.</p></section>
+  <section class="card content-card"><h2>Frequently asked questions</h2><div class="faq-item"><h3>How much does it cost to fully charge a 60kWh EV?</h3><p>About £17.55 at 26.32p/kWh and 90% efficiency, assuming a full 0–100% charge.</p></div><div class="faq-item"><h3>Is home charging cheaper at night?</h3><p>It can be on a tariff with a lower applicable overnight rate. A flat-rate tariff has no time-of-day unit-rate saving.</p></div><div class="faq-item"><h3>How much does 20% to 80% add?</h3><p>60 percentage points of usable battery capacity; for 60kWh, 36kWh stored in the battery.</p></div><div class="faq-item"><h3>Is 90% charging efficiency guaranteed?</h3><p>No. It is an example assumption; actual charging losses vary. Use wall-metered energy if available.</p></div></section>
+  <section class="card content-card"><h2>Methodology and further reading</h2><p>The examples use transparent assumptions, not independently measured appliance or vehicle performance. Costs are calculated before rounding, and exclude standing charges unless explicitly stated. See <a href="https://www.ofgem.gov.uk/your-energy-supply/your-energy-bill/energy-price-cap-unit-rates-and-standing-charges" target="_blank" rel="noopener">Ofgem's unit rates</a>, our <a href="/guides/how-to-find-appliance-energy-use/">energy-use guide</a> and <a href="/guides/compare-appliance-running-costs/">appliance cost comparison guide</a>.</p><p>Use the <a href="/calculators/ev-charging-cost-calculator/">calculate your ev charging cost</a> or <a href="/calculators/generic-appliance-running-cost-calculator/">general electricity cost calculator</a> with your own numbers.</p></section>
+</article></main>
+
+<footer class="site-footer">
+  <div class="container">
+    <strong>EnergyCalc UK</strong>
+    <div class="footer-links">
+      <a href="/about/">About</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/disclaimer/">Disclaimer</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <p>© 2026 EnergyCalc UK</p>
+    <p class="small" style="color:#cbd6e8">Estimates only. Actual electricity consumption and costs may vary.</p>
+  </div>
+</footer></body></html>
